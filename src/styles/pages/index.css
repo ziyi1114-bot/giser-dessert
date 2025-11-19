@@ -4,16 +4,18 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-
+    background-image: url("src/assets/images/hero/hero.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .hero__title {
     position: absolute;
-    background-color: rgba(164, 166, 168, 0.288);
+    background-color: rgba(164, 166, 168, 0.2);
     backdrop-filter: saturate(100%) blur(10px);
     align-self: center;
-    width: 57.8%;
-    height: 250px;
+
+    padding: 12px 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,26 +26,17 @@
     margin: auto;
 }
 
-
-
-.hero__images {
-    width: 100%;
-}
-
-.hero__images img {
-    width: 100%;
-    height: 100%;
-}
-
 /* ---------------flavor-introduce---------------- */
 
 .flavor-introduce {
-    background-color: #FCF1DD;
-    background-image: url(/src/assets/images/ui/bg.png);
+    /* background-color: #FCF1DD; */
+    background-image: url("/src/assets/images/ui/bg.png");
     background-repeat: repeat;
     width: 100%;
     height: 1080px;
     align-items: center;
+    padding: 72px 0 56px;
+    text-align: center;
 }
 
 .flavor-introduce .container {
@@ -59,13 +52,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 100px;
+    margin: 20px;
     padding: 20px;
+}
+
+.flavor-introduce__title{
+    font-size: 22px;
+    letter-spacing: 0.3em;
+    margin-bottom: 16px;
 }
 
 .flavor-introduce .btn-cta {
     width: auto;
-    margin: 75px;
+    margin: 30px;
     padding: 15px 35px;
     background-color: #E8AE37;
     border-radius: 15px;
@@ -79,7 +78,7 @@
 
 }
 
-.flavor-introduce__list{
+.flavor-introduce__list {
     display: flex;
 
 }

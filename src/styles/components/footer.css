@@ -1,5 +1,12 @@
+.site-footer{
+    display: flex;
+    justify-content: center;
+    background-color: #F8F6F6;
+}
 
 .site-footer .container {
+    width: 1320px;
+
     display: flex;
     background-color: #F8F6F6;
     align-items: flex-start;
