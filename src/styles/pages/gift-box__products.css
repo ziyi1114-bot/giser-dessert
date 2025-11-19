@@ -1,0 +1,161 @@
+/* -------------gift-box__products----- */
+.gift-box__products{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/src/assets/images/ui/bg.png);
+}
+
+.container{
+    display: flex;
+    width: 1320px;
+    justify-content: center;
+    /* background-color: chartreuse; */
+    
+}
+.gift-box__flavor{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(auto, auto
+    );
+    height: 600px;
+    margin: 30px;
+    /* background-color:blue; */
+    align-items: end;
+
+}
+
+.gift-box__card{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    max-width: 181px;
+    max-height: 192px;
+    margin: 60px;
+    /* background-color:chartreuse; */
+
+}
+.gift-box__card .img{
+    height:  200px;
+    width: 180px;
+}
+
+.gift-box__card .select{
+    display: flex;
+    width: 150px;
+    height: 38px;
+    background-color: #F6F7FB;
+    justify-content: space-between;
+    align-items: center;
+    padding:  10px;
+    border-radius: 30px;
+}
+.gift-box__card p{
+    font-size: 24px;
+    margin: 10px;
+}
+.gift-box__item{
+    display: flex;
+    flex-direction: column;
+}
+
+.header-title{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+.count-bar{
+    background-color: #FFDBE3;
+    height: 25px;
+    width: 476px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+
+
+
+.gift-box__cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgb(28, 28, 28);
+    width: 400px;
+    align-items: center;    
+}
+
+
+.cart-flavor{
+    border-bottom: 1px solid black;
+    height: 200px;
+    width: 70%;
+    margin: 30px;
+}
+
+.cart-control{
+    display: flex;
+    /* background-color: chartreuse; */
+    align-items: center;
+}
+
+.cart-btn{
+    background-color: #FCA3B5;
+    border-radius: 30px;
+    text-align: center;
+    padding: 5px 30px;
+    width: 100px;
+    color: #FFF;
+    margin: 20px;
+}
+
+.cart-select{
+    display: flex;
+    background-color: #F6F7FB;
+    width:100px;
+    padding: 5px 20px;
+    margin: 20px;
+    border-radius: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* ------------gift-boxs---------- */
+.gift-box .container{
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+   
+    width: 1320px;
+    justify-content: center;
+ 
+}
+
+.gift-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+       background-image: url(/src/assets/images/ui/bg.png);
+     background-color:#F8F6F6  ;
+}
+
+.gift-box__box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.gift-box__box .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gift-box__box .card a {
+    margin: 10px;
+    font-size: 24px;
+}

@@ -1,0 +1,43 @@
+
+.site-footer .container {
+    display: flex;
+    background-color: #F8F6F6;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.site-footer__item{
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.site-footer .card {
+    width: auto;
+    height: auto;
+    margin: 10px;
+    /* background-color: cadetblue; */
+    justify-content:flex-start;
+    display: flex;
+    align-items: flex-start;
+    
+}
+.site-footer .card img{
+    width: 39px;
+    height: 40px;
+}
+.site-footer .content{
+    display: flex;
+    flex-direction: column;
+    /* background-color: darkgreen; */
+
+}
+.site-footer .logo{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.site-footer h4{
+    font-size: 24px;
+}
