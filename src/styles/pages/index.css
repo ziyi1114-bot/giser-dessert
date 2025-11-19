@@ -98,12 +98,12 @@
 
 .steps__item {
   display: grid;
-  grid-template-columns: 1fr auto 1fr; /* 左右同寬，中間圖片固定在中央 */
+  grid-template-columns: 1fr auto 1fr;
   column-gap: 48px;
   align-items: center;
   width: 100%;
-  max-width: 960px;                     /* 控制整塊寬度 */
-  margin: 0 auto;                       /* 讓這塊本身置中 */
+  max-width: 960px;                     
+  margin: 0 auto;                      
 }
 .steps__item-header {
   text-align: right;

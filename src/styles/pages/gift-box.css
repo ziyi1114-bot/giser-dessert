@@ -1,88 +1,113 @@
-
-
 /* ----------------gif-box------------------- */
 
 .gift-box {
     background-color: #F8F6F6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
 }
 
 .gift-box .container {
+    padding: 60px 24px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    width: 1320px;
-    padding: 40px 0;
+    align-items: center;
 
 }
 
 .gift-box__item {
     display: flex;
     justify-content: center;
+    gap: 32px;
     flex-wrap: wrap;
 }
 
-.header-tital {
-    margin: 40px 0;
-    width: auto;
-    padding: 0;
+.gift-box__title {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.gift-box__title h2 {
+    font-size: 22px;
+    letter-spacing: 0.3em;
 }
 
 .gift-box__item .card {
+    width: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+}
+
+.gift-box__item .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 12px;
 }
 
 .gift-box__item .card a {
-    margin: 10px;
-    font-size: 24px;
+    margin-bottom: 4px;
+    font-size: 18px;
+}
+
+.gift-box__item .card span {
+    font-size: 16px;
+    letter-spacing: 0.1em;
 }
 
 /* ----------------gift-flower------------------ */
 
 .gift-flower {
     background-color: #fff;
-    background-image: url("/src/assets/images/ui/bg.png");
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    background-image: url("../../assets/images/ui/bg.png");
 }
 
 .gift-flower .container {
+    padding: 60px 24px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: start;
-    width: 1320px;
-    padding: 40px;
+    align-items: center;
 }
 
-.gift-flower__item{
+.gift-flower__item {
     display: flex;
     justify-content: center;
+    gap: 32px;
     flex-wrap: wrap;
 }
 
 .gift-flower__title {
-    margin:40px 0;
-    width: auto;
-    padding: 0;    
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.gift-flower__title h2 {
+    font-size: 22px;
+    letter-spacing: 0.3em;
 }
 
 .gift-flower .card {
+    width: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+
+}
+
+.gift-flower .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 12px;
+    border: 1px solid black;
 }
 
 .gift-flower .card a {
-    margin: 10px;
-    font-size: 24px;
+    margin-bottom: 4px;
+    font-size: 18px;
 }
 
+.gift-flower .card span {
+    font-size: 16px;
+    letter-spacing: 0.1em;
+}
