@@ -30,7 +30,7 @@
 }
 
 .gift-box__item .card {
-    width: 260px;
+    width: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,7 +86,7 @@
 }
 
 .gift-flower .card {
-    width: 260px;
+    width: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
