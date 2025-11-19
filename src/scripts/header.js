@@ -1,5 +1,5 @@
 window.onscroll = function(){
-    if(document.documentElement.scrollTop > 300){
+    if(document.documentElement.scrollTop > 200){
       document.getElementById("header-scroll").classList.add("smallPanel")
     }
     else{
