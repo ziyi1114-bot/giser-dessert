@@ -1,50 +1,77 @@
-.site-footer{
-    display: flex;
-    justify-content: center;
-    background-color: #F8F6F6;
+.site-footer {
+  margin-top: 80px;
+  background-color: #FFF7EA;         /* 淡米色，和主體白底做出層次 */
+  color: #444;
+  font-size: 14px;
 }
 
-.site-footer .container {
-    width: 1320px;
-
-    display: flex;
-    background-color: #F8F6F6;
-    align-items: flex-start;
-    justify-content: space-evenly;
+.footer-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  column-gap: 40px;
 }
 
-.site-footer__item{
-    margin: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.footer-brand img {
+  height: 56px;
+  margin-bottom: 12px;
 }
 
-.site-footer .card {
-    width: auto;
-    height: auto;
-    margin: 10px;
-    /* background-color: cadetblue; */
-    justify-content:flex-start;
-    display: flex;
-    align-items: flex-start;
-    
+.footer-brand p {
+  margin-bottom: 12px;
+  line-height: 1.7;
 }
-.site-footer .card img{
-    width: 39px;
-    height: 40px;
-}
-.site-footer .content{
-    display: flex;
-    flex-direction: column;
-    /* background-color: darkgreen; */
 
+.footer-contact {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
 }
-.site-footer .logo{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+
+.footer-contact li + li {
+  margin-top: 4px;
 }
-.site-footer h4{
-    font-size: 24px;
+
+.footer-social a {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+}
+
+.footer-column h3 {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  margin-bottom: 12px;
+}
+
+.footer-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-column li + li {
+  margin-top: 6px;
+}
+
+.footer-column a {
+  color: #444;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  color: #E8AE37;
+}
+
+/* 最底版權列 */
+.footer-bottom {
+  border-top: 1px solid rgba(0,0,0,0.06);
+  margin-top: 24px;
+  padding: 12px 24px 16px;
+  font-size: 12px;
+  color: #777;
+  text-align: center;
 }
