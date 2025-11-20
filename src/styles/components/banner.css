@@ -3,12 +3,19 @@
     height: 200px;
     background-color: #FCF1DD;
     display: flex;
+    justify-content: center;
+}
+
+.banner-container{
+    width: 1320px;
+    display: flex;
     align-items: end;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 .banner .banner-title{
     background-color:#FCF1DD ;
     display: flex;
+
     flex-direction: column;
     justify-content: start;
 }
