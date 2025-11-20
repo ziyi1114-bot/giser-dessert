@@ -42,8 +42,10 @@
 .wedding-step3__title h2 {
     font-size: 20px;
     margin-bottom: 24px;
+    letter-spacing: 0.25em;
 }
 .wedding-from{
+    margin: 30px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -53,4 +55,12 @@
 
 .wedding-from input{
     margin: 15px 0;
+}
+
+.done-btn{
+    margin: 10px 40px;
+    background-color: #FCA3B5;
+    padding: 5px 30px;
+    border-radius: 30px;
+    color: #FFFF;
 }

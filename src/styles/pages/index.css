@@ -166,6 +166,11 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.3s ease;
+}
+
+.product-section .card:hover img{
+     transform: scale(1.15);
 }
 
 .product-section .btn {
@@ -182,4 +187,3 @@
     letter-spacing: 0.15em;
 }
 
-..

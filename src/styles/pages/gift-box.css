@@ -30,12 +30,16 @@
 }
 
 .gift-box__item .card {
+    position: relative;
+    overflow: hidden;
     width: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
+
+
 
 .gift-box__item .card img {
     width: 100%;
@@ -45,13 +49,27 @@
 }
 
 .gift-box__item .card a {
-    margin-bottom: 4px;
+
     font-size: 18px;
 }
 
 .gift-box__item .card span {
     font-size: 16px;
     letter-spacing: 0.1em;
+}
+
+.gift-box__item .card .cta {
+    background-color: #FCA3B5;
+    padding: 10px 50px;
+    border-radius: 30px;
+    color: #fff;
+    position: absolute;
+    bottom: -15%;
+}
+
+.gift-box__item .card:hover .cta {
+    bottom: 0;
+    transition: all .5s;
 }
 
 /* ----------------gift-flower------------------ */
