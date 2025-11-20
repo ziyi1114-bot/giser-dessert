@@ -43,7 +43,7 @@
 }
 
 .site-header__nav li {
-    margin: 40px;
+    margin: 5px;
     width: max-content;
     font-size: 24px;
 }
@@ -51,4 +51,38 @@
 .site-header__cart {
     margin: 40px;
 }
+
+.site-header__nav li a{
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.site-header__nav li a .zh{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.site-header__nav li a .en{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 200%);
+}
+
+.site-header__nav li a:hover .zh{
+    transform: translate(-50%, -250%);
+}
+
+.site-header__nav li a:hover .en{
+    transform: translate(-50%, -50%);
+}
+
+
+
+
 

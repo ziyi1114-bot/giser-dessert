@@ -1,11 +1,10 @@
-
 /* -------------wedding-step2----------------- */
 .wedding-step2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(/src/assets/images/ui/bg.png);
+    background-image: url("/src/assets/images/ui/bg.png");
 }
 
 .wedding-step2 .container {
@@ -20,50 +19,66 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 12px;
 }
 
 .wedding-step2 .step-line {
-    width: 175px;
+    width: 160px;
     height: 1px;
     background-color: black;
-    margin: 24px;
+    margin: 0 24px;
 }
 
 .wedding-step2 .directions {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 24px;
+    max-width: 750px;
+    width: 100%;
+    margin: 8px auto 32px;
+    text-align: center;
+}
+
+.wedding-step2__title {
     justify-content: space-between;
-    width: 50%;
+    max-width: 960px;
+    margin: 0 auto 24px;
 }
 
-.wedding-step2__total {
-    padding: 10px;
-    margin: 10px;
+.wedding-step2__title h2 {
+    font-size: 20px;
+    margin-bottom: 24px;
 }
 
-.wedding-step2__item{
+.wedding-step2__title p {
+    font-size: 14px;
+    color: #666;
+}
+
+.wedding-step2__item {
     display: flex;
 
 }
 
-.wedding-step2 .card img{
+.wedding-step2 .card img {
     margin: 20px;
 }
 
-.wedding-step2 .step2-contrl{
+.wedding-step2 .step2-contrl {
     display: flex;
-    width:50%;
-    align-items:center;
+    width: 50%;
+    align-items: center;
     justify-content: space-between;
 }
 
-.wedding-step2__update{
+.wedding-step2__update {
     margin: 10px 40px;
     padding: 5px 30px;
     border-radius: 30px;
-    
+
 }
 
-.wedding-step2 .btn-next{
+.wedding-step2 .btn-next {
     margin: 10px 40px;
     background-color: #FCA3B5;
     padding: 5px 30px;

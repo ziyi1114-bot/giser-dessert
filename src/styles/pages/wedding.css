@@ -35,20 +35,6 @@
     text-align: center;
 }
 
-/* .header-wedding-step1 {
-    padding: 10px;
-    margin: 10px;
-}
-
-.wedding-step1__total {
-    display: flex;
-    align-self: flex-start;
-    margin-right: 300px;
-} */
-
-
-
-
 
 .wedding-step1__header-row {
     display: flex;
@@ -128,8 +114,8 @@
 }
 
 .card-img{
-    width: 260px;
-    height: 287px;
+    width: 240px;
+    height: 267px;
 }
 
 .wedding-step1 .select .icon {
