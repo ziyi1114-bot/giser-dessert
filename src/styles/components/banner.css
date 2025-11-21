@@ -1,6 +1,6 @@
 .banner {
     width: auto;
-    height: 200px;
+    height: 350px;
     background-color: #FCF1DD;
     display: flex;
     justify-content: center;
@@ -15,7 +15,6 @@
 .banner .banner-title{
     background-color:#FCF1DD ;
     display: flex;
-
     flex-direction: column;
     justify-content: start;
 }

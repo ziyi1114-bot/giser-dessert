@@ -2,13 +2,13 @@
     display: flex;
     align-items: center;
     margin: 0px auto;
-    height: 120px;
-    margin-top: 50px;
+    height: 0;
+    /* margin-top: 50px; */
     justify-content: center;
     left: 300px;
     right: 300px;
-    position: sticky;
-    top: 30px;
+    position:sticky;
+    top: 80px;
     z-index: 50;
 }
 
@@ -24,6 +24,7 @@
     z-index: 50;
     transition:all 1s;
   } */
+
 
 .site-header__inner{
     width: 110px;
