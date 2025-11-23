@@ -13,10 +13,11 @@
     <link rel="stylesheet" href="../../styles/components/banner.css">
     <link rel="stylesheet" href="../../styles/pages/gift-box__products.css">
     <script src="../../scripts/header.js"></script>
+
 </head>
 
 <body>
-     <header class="site-header" id="header-scroll">
+    <header class="site-header" id="header-scroll">
         <div class="site-header__inner">
             <a class="site-header__logo" href="../../../index.html">
                 <img src="../../assets/images/ui/ImageToStl.com_dessert 1.png" alt="吉舍甜食可麗露LOGO">
@@ -24,10 +25,22 @@
         </div>
         <div class="site-header__nav">
             <ul>
-                <li><a href="../../pages/gift-box/gift-box.html"><div class="zh">線上購買</div><div class="en">Shop</div></a></li>
-                <li><a href="../../pages/wedding/wedding.html"><div class="zh">婚禮小物</div><div class="en">Wedding</div></a></li>
-                <li><a href="../../pages/about/about.html"><div class="zh">關於我們</div><div class="en">About</div></a></li>
-                <li><a href="../../pages/faq/faq-section.html"><div class="zh">常見問題</div><div class="en">FAQ</div></a></li>
+                <li><a href="../../pages/gift-box/gift-box.html">
+                        <div class="zh">線上購買</div>
+                        <div class="en">Shop</div>
+                    </a></li>
+                <li><a href="../../pages/wedding/wedding.html">
+                        <div class="zh">婚禮小物</div>
+                        <div class="en">Wedding</div>
+                    </a></li>
+                <li><a href="../../pages/about/about.html">
+                        <div class="zh">關於我們</div>
+                        <div class="en">About</div>
+                    </a></li>
+                <li><a href="../../pages/faq/faq-section.html">
+                        <div class="zh">常見問題</div>
+                        <div class="en">FAQ</div>
+                    </a></li>
             </ul>
             <div class="site-header__cart">
                 <img src="../../assets/icons/icon-cart.png" alt="購物車">
@@ -36,117 +49,40 @@
     </header>
     <div class="banner">
         <div class="banner-container">
-        <div class="banner-title">
-            
-            <h1>6入禮盒</h1>
-        </div>
-        <div class="banner-pic">
-            <img src="../../assets/images/banner/banner.png" alt="">
-        </div>
+            <div class="banner-title">
+
+                <h1>6入禮盒</h1>
+            </div>
+            <div class="banner-pic">
+                <img src="../../assets/images/banner/banner.png" alt="">
+            </div>
         </div>
     </div>
 
     <main>
         <section class="gift-box__products">
-            
-                <div class="gift-box__cart">
-                    <div class="cart-flavor">
-                        <span>已挑選口味:</span>
-                    </div>
-                    <div class="cart-control">
+            <div class="gift-box__cart">
+                <div class="cart-flavor">
+                    <span>已挑選口味: <span id="total-count">0</span> / 10</span>
+                </div>
+                <div class="cart-control">
+                    <div class="cart-btn" id="btn-add-to-cart" style="opacity: 0.5; cursor: not-allowed;">加入購物車</div>
+                </div>
+            </div>
 
-                        <div class="cart-select">
-                            <div class="icon">
-                                <img src="../../assets/icons/icon-sub.png" alt="">
-                            </div>
-                            <div class="icon">
-                                <img src="../../assets/icons/icon-add.png" alt="">
-                            </div>
-                        </div>
-                        <div class="cart-btn">加入購物車</div>
+            <div class="gift-box__item">
+                <header class="header-title">
+                    <p>最多可選 10 種口味</p>
+                    <div class="count-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                        <span id="progress-text" class="progress-text">0 / 10</span>
                     </div>
+                    
+                </header>
+
+                <div class="gift-box__flavor" id="flavor-container">
                 </div>
-                <div class="gift-box__item">
-                    <header class="header-title">
-                        <p>最多可選10種口味</p>
-                        <div class="count-bar"></div>
-                    </header>
-                    <div class="gift-box__flavor">
-                        <div class="gift-box__card">
-                            <img src="../../assets/images/index/flavor-vanilla.png" alt="">
-                            <p>經典香草</p>
-                            <div class="select">
-                                <div class="icon">
-                                    <img src="../../assets/icons/icon-sub.png" alt="">
-                                </div>
-                                <div class="icon">
-                                    <img src="../../assets/icons/icon-add.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gift-box__card">
-                            <img src="../../assets/images/index/flavor-chocolate.png" alt="">
-                            <p>法芙娜可可</p>
-                            <div class="select">
-                                <div class="icon">
-                                    <img src="../../assets/icons/icon-sub.png" alt="">
-                                </div>
-                                <div class="icon">
-                                    <img src="../../assets/icons/icon-add.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gift-box__card">
-                            <img src="../../assets/images/index/flavor-koyamaen.png" alt="">
-                            <p>小山園抹茶</p>
-                            <div class="select">
-                                <div class="icon">
-                                    <img src="../../assets/icons/icon-sub.png" alt="">
-                                </div>
-                                <div class="icon">
-                                    <img src="../../assets/icons/icon-add.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gift-box__card">
-                            <img src="../../assets/images/index/flavor-thai-milk-tea.png" alt="">
-                            <p>泰式奶茶</p>
-                            <div class="select">
-                                <div class="icon">
-                                    <img src="../../assets/icons/icon-sub.png" alt="">
-                                </div>
-                                <div class="icon">
-                                    <img src="../../assets/icons/icon-add.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gift-box__card">
-                            <img src="../../assets/images/index/flavor-caramel-hazelnut.png" alt="">
-                            <p>焦糖榛果</p>
-                            <div class="select">
-                                <div class="icon">
-                                    <img src="../../assets/icons/icon-sub.png" alt="">
-                                </div>
-                                <div class="icon">
-                                    <img src="../../assets/icons/icon-add.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gift-box__card">
-                            <img src="../../assets/images/index/flavor-taro-salted-egg-yolk.png" alt="">
-                            <p>芋泥鹹蛋黃</p>
-                            <div class="select">
-                                <div class="icon">
-                                    <img src="../../assets/icons/icon-sub.png" alt="">
-                                </div>
-                                <div class="icon">
-                                    <img src="../../assets/icons/icon-add.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
+            </div>
         </section>
         <section class="gift-box">
             <div class="container">
@@ -175,14 +111,14 @@
             </div>
         </section>
     </main>
-   <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-main">
 
             <div class="footer-brand">
                 <img src="../../assets/images/ui/logo-text.png" alt="Gishé Dessert">
                 <p>專注可麗露的甜點品牌，用焦糖脆殼與綿密內餡，陪伴每一個重要日子。</p>
 
-                 <ul class="footer-contact">
+                <ul class="footer-contact">
                     <li>聯絡信箱：gishe-desser@gishe-dessert.com</li>
                     <li>LINE:@gishe_dessert</li>
                     <li>服務時間:Mon-Fri 10:00-18:00</li>
@@ -225,6 +161,7 @@
             <p>本網站僅為個人作品展示，非實際商業營運網站。</p>
         </div>
     </footer>
+        <script src="../../scripts/git-box(10).js"></script>
 </body>
 
 </html>

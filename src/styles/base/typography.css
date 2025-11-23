@@ -2,9 +2,11 @@ h1{
     font-family: Noto serif TC;
     font-size: 40px;
     letter-spacing: 15px;
+    line-height: 1.6;
 }
 h2{
     font-size: 22px;
     letter-spacing: 0.3em;
     margin-bottom: 8px;
+    line-height: 1.6;
 }
