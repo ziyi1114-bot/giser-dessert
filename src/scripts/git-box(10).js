@@ -7,7 +7,7 @@ const flavorData = [
     { id: 'taro', name: '芋泥鹹蛋黃', img: '../../assets/images/index/flavor-taro-salted-egg-yolk.png', count: 0 }
 ];
 
-const MAX_COUNT = 10;
+const MAX = 10;
 
 
 function render() {
@@ -29,8 +29,7 @@ function render() {
                 <div class="icon" onclick="updateCount(${i}, -1)">
                     <span>➖</span>
                 </div>
-                
-                <span class="qty-display" style="margin: 0 10px; font-weight:bold;">${item.count}</span>
+                <span class="qty-display" style="margin: 0 10px; ">${item.count}</span>
 
                 <div class="icon" onclick="updateCount(${i}, 1)">
                     <span>➕</span>
@@ -42,13 +41,13 @@ function render() {
     container.innerHTML = htmlContent;
 
 
-    let percentage = (currentTotal / MAX_COUNT) * 100;
+    let percentage = (currentTotal / MAX) * 100;
     if (progressFill) {
         progressFill.style.width = `${percentage}%`;
     }
 
     if (progressText) {
-        progressText.innerText = `${currentTotal} / ${MAX_COUNT}`;
+        progressText.innerText = `${currentTotal} / ${MAX}`;
     }
 }
 
@@ -60,14 +59,14 @@ function updateCount(products, change) {
     for (let i = 0; i < flavorData.length; i++) {
         let item = flavorData[i];
         sum += item.count;
-        
+
     }
-    
+
     let totalSelected = sum;
     if (change > 0) {
-        
-        if (totalSelected < MAX_COUNT) {
-            
+
+        if (totalSelected < MAX) {
+
             flavorData[products].count++;
         } else {
             alert("禮盒滿了！最多只能選 10 個喔");
@@ -82,8 +81,8 @@ function updateCount(products, change) {
             return;
         }
     }
-    if (flavorData[products].count > 0){
-        flavorName.innerText =`${flavorData[products].name}`
+    if (flavorData[products].count > 0) {
+        flavorName.innerText = `${flavorData[products].name}`
     }
 
     totalCountSpan.innerText = `${flavorData[products].count}`
