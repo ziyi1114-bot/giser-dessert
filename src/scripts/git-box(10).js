@@ -19,7 +19,7 @@ function render() {
     let currentTotal = 0;
 
     for (let i = 0; i < flavorData.length; i++) {
-        const item = flavorData[i];
+        let item = flavorData[i];
         currentTotal += item.count;
         htmlContent += `
         <div class="gift-box__card">
@@ -51,6 +51,8 @@ function render() {
     }
 }
 
+// --------------------------------------------------
+
 function updateCount(products, change) {
     let totalCountSpan = document.getElementById('total-count');
     let flavorName = document.getElementById('flavor-name')
@@ -64,12 +66,10 @@ function updateCount(products, change) {
 
     let totalSelected = sum;
     if (change > 0) {
-
         if (totalSelected < MAX) {
-
             flavorData[products].count++;
         } else {
-            alert("禮盒滿了！最多只能選 10 個喔");
+            alert("禮盒滿了！最多只能選 10 個");
             return;
         }
     }
@@ -81,15 +81,14 @@ function updateCount(products, change) {
             return;
         }
     }
+    
     if (flavorData[products].count > 0) {
-        flavorName.innerText = `${flavorData[products].name}`
+        flavorName.innerText = `${flavorData[products].name}`     
     }
-
     totalCountSpan.innerText = `${flavorData[products].count}`
 
     render();
 }
-
 
 render();
 
