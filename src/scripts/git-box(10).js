@@ -11,9 +11,9 @@ const MAX = 10;
 
 
 function render() {
-    const container = document.getElementById('flavor-container');
-    const progressFill = document.getElementById('progress-fill');
-    const progressText = document.getElementById('progress-text');
+    let container = document.getElementById('flavor-container');
+    let progressFill = document.getElementById('progress-fill');
+    let progressText = document.getElementById('progress-text');
 
     let htmlContent = '';
     let currentTotal = 0;
@@ -52,8 +52,8 @@ function render() {
 }
 
 function updateCount(products, change) {
-    const totalCountSpan = document.getElementById('total-count');
-    const flavorName = document.getElementById('flavor-name')
+    let totalCountSpan = document.getElementById('total-count');
+    let flavorName = document.getElementById('flavor-name')
     let sum = 0;
 
     for (let i = 0; i < flavorData.length; i++) {
