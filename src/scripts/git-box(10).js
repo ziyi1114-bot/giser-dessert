@@ -12,8 +12,6 @@ const MAX_COUNT = 10;
 
 function render() {
     const container = document.getElementById('flavor-container');
-
-    //進圖條
     const progressFill = document.getElementById('progress-fill');
     const progressText = document.getElementById('progress-text');
 
@@ -22,7 +20,6 @@ function render() {
 
     for (let i = 0; i < flavorData.length; i++) {
         const item = flavorData[i];
-        const index = i;
         currentTotal += item.count;
         htmlContent += `
         <div class="gift-box__card">
@@ -30,13 +27,13 @@ function render() {
             <p>${item.name}</p>
             <div class="select">
                 <div class="icon" onclick="updateCount(${i}, -1)">
-                    <img src="../../assets/icons/icon-sub.png" alt="sub">
+                    <span>➖</span>
                 </div>
                 
                 <span class="qty-display" style="margin: 0 10px; font-weight:bold;">${item.count}</span>
 
                 <div class="icon" onclick="updateCount(${i}, 1)">
-                    <img src="../../assets/icons/icon-add.png" alt="add">
+                    <span>➕</span>
                 </div>
             </div>
         </div>
@@ -45,7 +42,7 @@ function render() {
     container.innerHTML = htmlContent;
 
 
-    const percentage = (currentTotal / MAX_COUNT) * 100;
+    let percentage = (currentTotal / MAX_COUNT) * 100;
     if (progressFill) {
         progressFill.style.width = `${percentage}%`;
     }
@@ -53,44 +50,43 @@ function render() {
     if (progressText) {
         progressText.innerText = `${currentTotal} / ${MAX_COUNT}`;
     }
-
-
 }
 
-
-function updateCount(index, change) {
+function updateCount(products, change) {
     const totalCountSpan = document.getElementById('total-count');
+    const flavorName = document.getElementById('flavor-name')
     let sum = 0;
-
 
     for (let i = 0; i < flavorData.length; i++) {
         let item = flavorData[i];
         sum += item.count;
+        
     }
     
     let totalSelected = sum;
     if (change > 0) {
         
         if (totalSelected < MAX_COUNT) {
-            totalCountSpan.innerText += `${flavorData[index].name}`
-            flavorData[index].count++;
+            
+            flavorData[products].count++;
         } else {
-            alert("盒子滿了！最多只能選 10 個喔");
+            alert("禮盒滿了！最多只能選 10 個喔");
             return;
         }
     }
 
     if (change < 0) {
-        if (flavorData[index].count > 0) {
-            flavorData[index].count--;
+        if (flavorData[products].count > 0) {
+            flavorData[products].count--;
         } else {
             return;
         }
     }
+    if (flavorData[products].count > 0){
+        flavorName.innerText =`${flavorData[products].name}`
+    }
 
-    // if (totalCountSpan) {
-    //     totalCountSpan.innerText = `${flavorData[index].name}`
-    // }
+    totalCountSpan.innerText = `${flavorData[products].count}`
 
     render();
 }
