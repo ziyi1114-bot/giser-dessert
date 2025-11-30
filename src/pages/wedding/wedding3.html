@@ -24,10 +24,22 @@
         </div>
         <div class="site-header__nav">
             <ul>
-                <li><a href="../../pages/gift-box/gift-box.html"><div class="zh">線上購買</div><div class="en">Shop</div></a></li>
-                <li><a href="../../pages/wedding/wedding.html"><div class="zh">婚禮小物</div><div class="en">Wedding</div></a></li>
-                <li><a href="../../pages/about/about.html"><div class="zh">關於我們</div><div class="en">About</div></a></li>
-                <li><a href="../../pages/faq/faq-section.html"><div class="zh">常見問題</div><div class="en">FAQ</div></a></li>
+                <li><a href="../../pages/gift-box/gift-box.html">
+                        <div class="zh">線上購買</div>
+                        <div class="en">Shop</div>
+                    </a></li>
+                <li><a href="../../pages/wedding/wedding.html">
+                        <div class="zh">婚禮小物</div>
+                        <div class="en">Wedding</div>
+                    </a></li>
+                <li><a href="../../pages/about/about.html">
+                        <div class="zh">關於我們</div>
+                        <div class="en">About</div>
+                    </a></li>
+                <li><a href="../../pages/faq/faq-section.html">
+                        <div class="zh">常見問題</div>
+                        <div class="en">FAQ</div>
+                    </a></li>
             </ul>
             <div class="site-header__cart">
                 <img src="../../assets/icons/icon-cart.png" alt="購物車">
@@ -36,58 +48,77 @@
     </header>
     <div class="banner">
         <div class="banner-container">
-        <div class="banner-title">
-            <h1>wedding</h1>
-            <h1>婚禮小物</h1>
-        </div>
-        <div class="banner-pic">
-            <img src="../../assets/images/banner/banner.png" alt="">
-        </div>
+            <div class="banner-title">
+                <h1>wedding</h1>
+                <h1>婚禮小物</h1>
+            </div>
+            <div class="banner-pic">
+                <img src="../../assets/images/banner/banner.png" alt="">
+            </div>
         </div>
     </div>
 
     <main>
         <section class="wedding-step3">
-            <div class="container">
-                <div class="step-bar">
-                    <div class="step">
-                        <img src="../../assets/images/wedding/icon-step1o.png" alt="">
+            <div class="form-container">
+                <div class="steps-container">
+                    <div class="step completed">
+                        <div class="step-circle">1</div>
+                        <p class="step-label">選數量口味</p>
                     </div>
-                    <div class="step-line"></div>
-                    <div class="step">
-                        <img src="../../assets/images/wedding/icon-step2o.png" alt="">
+
+                    <div class="step completed">
+                        <div class="step-circle">2</div>
+                        <p class="step-label">選包裝小卡</p>
                     </div>
-                    <div class="step-line"></div>
-                    <div class="step">
-                        <img src="../../assets/images/wedding/icon-step3o.png" alt="">
-                    </div>
-                </div>
-                <div class="directions">
-                    <div class="step-directions">
-                        <p>選數量及口味</p>
-                    </div>
-                    <div class="step-directions">
-                        <p>選包裝及上傳卡片</p>
-                    </div>
-                    <div class="step-directions">
-                        <p>選定日期及地點</p>
+
+                    <div class="step active">
+                        <div class="step-circle">3</div>
+                        <p class="step-label">填寫資料</p>
                     </div>
                 </div>
-                <header class="wedding-step3__title">
-                    <h2>[Step3]選定日期及機聯絡資料</h2>
-                </header>
-                <div class="wedding-from">
-                        真實姓名<input type="text">
-                        連絡電話<input type="tel">
-                        選擇日期<input type="date">
-                        電子信箱<input type="email">
-                        配送地點<input type="text">
-                        備註<input type="text">
-                </div>
-                 <div class="done-btn">確認送出</div>
+                <form action="">
+                    <div class="form-group">
+                        <label for="name">真實姓名</label>
+                        <input type="text" id="name" placeholder="請輸入全名">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">連絡電話</label>
+                        <input type="tel" id="phone" placeholder="09xx-xxx-xxx">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">電子信箱</label>
+                        <input type="mail" id="email" placeholder="請輸入有效信箱">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">選擇日期</label>
+                        <input type="date" id="date">
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="address">配送地點</label>
+                        <input type="text" id="address" placeholder="請輸入完整地址">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="note">備註</label>
+                        <textarea id="note" rows="4" placeholder="有什麼特殊需求嗎？"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">確認送出</button>
+                    </div>
+
+                </form>
+            </div>
         </section>
     </main>
-        <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-main">
 
             <div class="footer-brand">

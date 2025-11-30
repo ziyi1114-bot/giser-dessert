@@ -3,8 +3,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-
 }
 
 .fqa-section h3 {
@@ -52,32 +50,34 @@
     display: none;
 }
 
-#arrow-control:checked~.question-title .arrow-down .bar1 {
+#arrow-control:checked~.accordion-header> .arrow-down .bar1 {
     top: 15px;
     rotate: 315deg;
 }
 
-#arrow-control:checked~.question-title .arrow-down .bar2 {
+#arrow-control:checked~.accordion-header> .arrow-down .bar2 {
     top: 15px;
     rotate: 225deg;
 }
 
 
-.question {
+.accordion-item {
     display: flex;
     flex-direction: column;
     margin: 20px 0;
 }
 
-.question-title {
+.accordion-header {
     display: flex;
-    border-bottom: 2px solid #D9D9D9;
     justify-content: space-between;
     align-items: center;
     /* background-color: azure; */
 }
 
+.accordion-panel{
+  display: none;
+}
 
-.answer .hedden {
+.open{
     display: block;
 }

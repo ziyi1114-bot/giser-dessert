@@ -1,139 +1,199 @@
-/* -----------------wedding-step1------------- */
+/* --- 步驟條容器 --- */
+.steps-container {
+    display: flex;               /* 讓三個步驟橫向排列 */
+    justify-content: space-between; /* 平均分散在兩側 */
+    align-items: flex-start;     /* 靠上對齊 */
+    margin-bottom: 40px;         /* 與下方表單拉開距離 */
+    position: relative;          /* 關鍵：為了讓連接線定位 */
+}
+
+/* --- 👻 CSS 魔術：用偽元素畫出灰色的背景連接線 --- */
+.steps-container::before {
+    content: '';                 /* 偽元素一定要有 content */
+    position: absolute;          /* 絕對定位 */
+    top: 15px;                   /* 定位在圓圈的中間高度 (圓圈高30px的一半) */
+    left: 0;
+    width: 100%;                 /* 拉滿整個寬度 */
+    height: 2px;                 /* 線的粗細 */
+    background-color: #e0e0e0;   /* 淺灰色底線 */
+    z-index: 0;                  /* 放在最底層，讓圓圈壓在上面 */
+}
+
+/* --- 每一個步驟區塊 --- */
+.step {
+    position: relative;          /* 為了讓自己的內容壓在線上 */
+    z-index: 1;                  /* 比線高一層 */
+    text-align: center;          /* 文字置中 */
+    width: 33.33%;               /* 三個步驟平分寬度 */
+}
+
+/* --- 圓圈圈的樣式 (基礎版) --- */
+.step-circle {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;      /* 預設白底 */
+    border: 2px solid #e0e0e0;   /* 預設灰框 */
+    border-radius: 50%;          /* 變成圓形 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px auto;    /* 置中，並與下方文字留距 */
+    font-weight: bold;
+    color: #999;                 /* 預設灰字 */
+    transition: all 0.3s;
+}
+
+/* --- 文字標籤的樣式 --- */
+.step-label {
+    font-size: 0.9rem;
+    color: #999;
+    margin: 0;
+}
+
+/* --- 狀態設計：已完成 (Completed) --- */
+.step.completed .step-circle {
+    background-color: #FFB6C1;   /* 實心粉紅底 */
+    border-color: #FFB6C1;       /* 粉紅框 */
+    color: white;                /* 白字 */
+}
+.step.completed .step-label {
+    color: #FFB6C1;              /* 文字也變粉紅 */
+}
+
+/* --- 👻 CSS 魔術進階：把已完成的連接線蓋上去 --- */
+/* 這個選擇器意思是：在「已完成」步驟後面的那條線 */
+.step.completed::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 50%;                   /* 從圓圈中間開始 */
+    width: 100%;                 /* 往右拉滿 */
+    height: 2px;
+    background-color: #FFB6C1;   /* 粉紅色線 */
+    z-index: -1;                 /* 放在圓圈後面，灰色線前面 */
+}
+/* 最後一個步驟不需要往後延伸的線，藏起來 */
+.step:last-child::after {
+    display: none;
+}
+
+
+/* --- 狀態設計：目前進行中 (Active) --- */
+.step.active .step-circle {
+    background-color: #fff;      /* 白底 */
+    border-color: #FFB6C1;       /* 粉紅框 */
+    color: #FFB6C1;              /* 粉紅字 */
+    transform: scale(1.1);       /* 稍微放大一點點，強調現在在這裡 */
+    box-shadow: 0 0 10px rgba(255, 182, 193, 0.3); /* 加一點發光效果 */
+}
+.step.active .step-label {
+    color: #333;                 /* 文字用深黑色強調 */
+    font-weight: bold;
+}
+
+/* --- 佈局容器 --- */
+/* 用來限制內容最大寬度並置中的容器 */
 .wedding-step1 {
-    background-image: url("/src/assets/images/ui/bg.png");
-    padding: 80px 0;
+    max-width: 900px; /* 最大寬度不超過 900px */
+    margin: 0 auto;   /* 上下邊距 0，左右自動 (置中關鍵) */
+    padding: 20px;    /* 內距，避免內容貼邊 */
 }
 
-.wedding-step1 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+/* --- 標題與統計區塊 --- */
+.header-section {
+    text-align: center; /* 文字置中 */
+    margin-bottom: 40px; /* 與下方商品列表拉開距離 */
+    color: #555; /* 深灰色文字 */
+}
+.sub-title {
+    font-size: 0.9rem; /* 副標題字小一點 */
+    color: #888; /* 淺灰色 */
+}
+.total-counter {
+    margin-top: 15px;
+    font-weight: bold; /* 加粗 */
+}
+/* 用來強調數字的樣式 (粉紅色大字) */
+.highlight {
+    color: #FFB6C1; /* 主題粉紅色 */
+    font-size: 1.2rem;
+    margin: 0 5px; /* 左右留點空隙 */
 }
 
-.wedding-step1 .step-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 12px;
-}
-
-.wedding-step1 .step-line {
-    width: 160px;
-    height: 1px;
-    background-color: black;
-    margin: 0 24px;
-}
-
-.wedding-step1 .directions {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 24px;
-    max-width: 750px;
-    width: 100%;
-    margin: 8px auto 32px;
-    text-align: center;
-}
-
-
-.wedding-step1__header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 960px;
-    margin: 0 auto 24px;
-}
-
-.wedding-step1__header h2 {
-    font-size: 20px;
-    margin-bottom: 4px;
-}
-
-.wedding-step1__header p {
-    font-size: 14px;
-    color: #666;
-}
-
-.wedding-step1__total {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-}
-
+/* --- 下一步按鈕 (互動元件) --- */
 .btn-next {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 6px 24px;
-    background-color: #FCA3B5;
-    border-radius: 30px;
-    color: #fff;
-    font-size: 14px;
-    letter-spacing: 0.2em;
+    background-color: #FFB6C1;
+    color: white;
+    padding: 10px 30px;       /* 增加按鈕大小 */
+    border-radius: 20px;      /* 圓角樣式 */
+    text-decoration: none;    /* 移除超連結底線 */
+    display: inline-block;
+    margin-left: 15px;
+    transition: 0.3s;         /* 讓狀態切換有動畫效果 */
+    
+    /* 預設狀態：禁用 (Disabled) */
+    opacity: 0.5;             /* 半透明，看起來不能按 */
+    pointer-events: none;     /* 關鍵：讓滑鼠點不到它，真的不能按 */
 }
 
-.wedding-step1__item {
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 40px 0 16px;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 32px;
-    row-gap: 32px;
-    justify-items: center;
+/* 當被 JS 加上 .active class 時的狀態：啟用 (Enabled) */
+.btn-next.active {
+    opacity: 1;               /* 恢復不透明 */
+    pointer-events: auto;     /* 恢復滑鼠事件，可以點擊了 */
+    cursor: pointer;          /* 滑鼠變手指 */
 }
 
-.wedding-step1 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* --- 商品列表 (Flexbox 網格系統) --- */
+.product-grid {
+    display: flex;            /* 啟用 Flexbox 佈局 */
+    flex-wrap: wrap;          /* 允許換行 */
+    gap: 30px;                /* 卡片之間的間距 */
+    justify-content: center;  /* 整體置中對齊 */
+}
+
+/* --- 個別商品卡片 --- */
+.product-card {
+    /* 計算寬度：(100% / 3) 減去 間距 */
+    /* 這樣才能精準的一排三個 */
+    width: calc(33.333% - 30px); 
     text-align: center;
 }
-
-.wedding-step1 .card>img {
-    width: 140px;
-    height: auto;
-    margin-bottom: 12px;
+.product-card img {
+    width: 100%;             /* 圖片自適應容器寬度 */
+    max-width: 200px;        /* 但最大不要超過 200px */
+    border-radius: 10px;     /* 圖片圓角 */
 }
 
-.wedding-step1 .card p {
-    font-size: 18px;
-    margin: 4px 0 12px;
+/* --- 加減控制條 --- */
+.control-bar {
+    display: flex;           /* 讓 icon 和數字橫排 */
+    align-items: center;     /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    gap: 15px;               /* 拉開間距 */
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.icon-btn {
+    cursor: pointer;         /* 滑鼠變手指 */
+    width: 30px;             /* 限制 icon 大小 */
+    height: 30px;
+    transition: transform 0.1s;
+}
+.icon-btn:active {
+    transform: scale(0.9);   /* 點擊時縮小的回饋感 */
 }
 
-.wedding-step1 .select {
-    display: flex;
-    width: 187px;
-    height: 35px;
-    background-color: #F6F7FB;
-    border-radius: 30px;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-}
-
-.card-img{
-    width: 240px;
-    height: 267px;
-}
-
-.wedding-step1 .select .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 20px;
-}
-
-.wedding-step1 .select .icon.minus{
-    padding: 21px 10px;
-}
-
-.wedding-step1 .select .icon.plus{
-    padding: 10px;
-}
-
-
-.wedding-step1 .select .icon img {
-    width: 26px;
+/* --- RWD 響應式設計 (手機版) --- */
+/* 當螢幕寬度小於 768px 時觸發 */
+@media (max-width: 768px) {
+    .product-card {
+        /* 手機版改成一排兩個 */
+        width: calc(50% - 30px); 
+    }
+    /* 如果手機更小，想變一排一個，可以再加一個斷點：
+    @media (max-width: 480px) {
+        .product-card { width: 100%; }
+    }
+    */
 }

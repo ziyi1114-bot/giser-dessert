@@ -50,128 +50,31 @@
 
     <main>
         <section class="wedding-step1">
-            <div class="container">
-                <div class="step-bar">
-                    <div class="step">
-                        <img src="../../assets/images/wedding/icon-step1o.png" alt="">
-                    </div>
-                    <div class="step-line"></div>
-                    <div class="step">
-                        <img src="../../assets/images/wedding/icon-step2.png" alt="">
-                    </div>
-                    <div class="step-line"></div>
-                    <div class="step">
-                        <img src="../../assets/images/wedding/icon-step3.png" alt="">
-                    </div>
-                </div>
-                <div class="directions">
-                    <div class="step-directions">
-                        <p>選數量及口味</p>
-                    </div>
-                    <div class="step-directions">
-                        <p>選包裝及上傳卡片</p>
-                    </div>
-                    <div class="step-directions">
-                        <p>選定日期及地點</p>
-                    </div>
-                </div>
-                <div class="wedding-step1__header-row">
-                    <header class="wedding-step1__header">
-                        <h2>[Step1]選擇數量及口味</h2>
-                        <p>數量已10個為單位</p>
-                    </header>
-                    <div class="wedding-step1__total">
-                        <span>目前總共:<span id="weddingTotal"></span>個</span>
-                    </div>
-                    <a href="../../pages/wedding/wedding2.html" class="btn-next">下一步</a>
-                </div>
+            <div class="steps-container" style="margin-bottom: 40px;">
+        <div class="step active"> <div class="step-circle">1</div>
+            <p class="step-label">選數量及口味</p>
+        </div>
+        <div class="step">
+            <div class="step-circle">2</div>
+            <p class="step-label">選包裝及上傳卡片</p>
+        </div>
+        <div class="step">
+            <div class="step-circle">3</div>
+            <p class="step-label">選定日期及地點</p>
+        </div>
+    </div>
 
-                <div class="wedding-step1__item">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="../../assets/images/index/flavor-vanilla.png" alt="">
-                        </div>
-                        <p>經典香草</p>
-                        <div class="select">
-                            <div class="icon minus">
-                                <img src="../../assets/icons/icon-sub.png" alt="">
-                            </div>
-                            <div class="icon plus">
-                                <img src="../../assets/icons/icon-add.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="../../assets/images/index/flavor-chocolate.png" alt="">
-                        </div>
-                        <p>法芙娜可可</p>
-                        <div class="select">
-                            <div class="icon minus">
-                                <img src="../../assets/icons/icon-sub.png" alt="">
-                            </div>
-                            <div class="icon plus">
-                                <img src="../../assets/icons/icon-add.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="../../assets/images/index/flavor-koyamaen.png" alt="">
-                        </div>
-                        <p>小山園抹茶</p>
-                        <div class="select">
-                            <div class="icon minus">
-                                <img src="../../assets/icons/icon-sub.png" alt="">
-                            </div>
-                            <div class="icon plus">
-                                <img src="../../assets/icons/icon-add.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="../../assets/images/index/flavor-thai-milk-tea.png" alt="">
-                        </div>
-                        <p>泰式奶茶</p>
-                        <div class="select">
-                            <div class="icon minus">
-                                <img src="../../assets/icons/icon-sub.png" alt="">
-                            </div>
-                            <div class="icon plus">
-                                <img src="../../assets/icons/icon-add.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="../../assets/images/index/flavor-caramel-hazelnut.png" alt="">
-                        </div>
-                        <p>焦糖榛果</p>
-                        <div class="select">
-                            <div class="icon minus">
-                                <img src="../../assets/icons/icon-sub.png" alt="">
-                            </div>
-                            <div class="icon plus">
-                                <img src="../../assets/icons/icon-add.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="../../assets/images/index/flavor-taro-salted-egg-yolk.png" alt="">
-                        </div>
-                        <p>芋泥鹹蛋黃</p>
-                        <div class="select">
-                            <div class="icon minus">
-                                <img src="../../assets/icons/icon-sub.png" alt="">
-                            </div>
-                            <div class="icon plus">
-                                <img src="../../assets/icons/icon-add.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="header-section">
+        <h2>[Step 1] 選擇數量及口味</h2>
+        <p class="sub-title">數量以 10 個為單位</p>
+        <div class="total-counter">
+            目前總共: <span id="total-count-display" class="highlight">0</span> 個
+            <a href="wedding2.html" id="btn-next-step" class="btn-next">下一步</a>
+        </div>
+    </div>
+
+    <div id="product-grid-container" class="product-grid">
+        </div>
             </div>
         </section>
     </main>
@@ -229,6 +132,7 @@
             <p>本網站僅為個人作品展示，非實際商業營運網站。</p>
         </div>
     </footer>
+    <script src="../../scripts/wedding.js"></script>
 </body>
 
 </html>

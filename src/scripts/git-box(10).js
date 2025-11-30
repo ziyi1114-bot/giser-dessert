@@ -49,6 +49,8 @@ function render() {
     if (progressText) {
         progressText.innerText = `${currentTotal} / ${MAX}`;
     }
+
+    
 }
 
 // --------------------------------------------------
@@ -82,13 +84,32 @@ function updateCount(products, change) {
         }
     }
     
-    if (flavorData[products].count > 0) {
-        flavorName.innerText = `${flavorData[products].name}`     
-    }
-    totalCountSpan.innerText = `${flavorData[products].count}`
+    const showCart = flavorData.filter(flavorData => flavorData.count > 0)
+    for(let k in showCart)
+        console.log(k);
+        console.log(showCart[k]);
+        
+        
+
+    // for( i = 0 ; i < showCart.length ; i ++){
+    //     console.log(showCart[i].name);
+    // }
+    // flavorName.innerText =  `${showCart[products].count}`
+    
+    // if (flavorData[products].count > 0) {
+    //     flavorName.innerText = `${flavorData[products].name}`
+        
+    // }
+    // totalCountSpan.innerText = `${flavorData[products].count}`
+
+    //console.log(showCart);
+    
+
 
     render();
 }
+
+
 
 render();
 
