@@ -1,84 +1,77 @@
-/* --- 步驟條容器 --- */
+/* --- 進度條 --- */
 .steps-container {
-    display: flex;               /* 讓三個步驟橫向排列 */
-    justify-content: space-between; /* 平均分散在兩側 */
-    align-items: flex-start;     /* 靠上對齊 */
-    margin-bottom: 40px;         /* 與下方表單拉開距離 */
-    position: relative;          /* 關鍵：為了讓連接線定位 */
+    display: flex;              
+    justify-content: space-between;
+    align-items: flex-start;     
+    margin-bottom: 40px;        
+    position: relative;          /* 為了讓連接線定位 */
 }
 
-/* --- 👻 CSS 魔術：用偽元素畫出灰色的背景連接線 --- */
 .steps-container::before {
-    content: '';                 /* 偽元素一定要有 content */
-    position: absolute;          /* 絕對定位 */
-    top: 15px;                   /* 定位在圓圈的中間高度 (圓圈高30px的一半) */
+    content: '';                
+    position: absolute;          
+    top: 15px;                 
     left: 0;
-    width: 100%;                 /* 拉滿整個寬度 */
-    height: 2px;                 /* 線的粗細 */
-    background-color: #e0e0e0;   /* 淺灰色底線 */
-    z-index: 0;                  /* 放在最底層，讓圓圈壓在上面 */
+    width: 100%;                
+    height: 2px;                
+    background-color: #e0e0e0;   
+    z-index: 0;                  
 }
 
-/* --- 每一個步驟區塊 --- */
 .step {
-    position: relative;          /* 為了讓自己的內容壓在線上 */
-    z-index: 1;                  /* 比線高一層 */
-    text-align: center;          /* 文字置中 */
-    width: 33.33%;               /* 三個步驟平分寬度 */
+    position: relative;          
+    z-index: 1;                  
+    text-align: center;          
+    width: 33.33%;               
 }
 
-/* --- 圓圈圈的樣式 (基礎版) --- */
 .step-circle {
     width: 30px;
     height: 30px;
-    background-color: #fff;      /* 預設白底 */
-    border: 2px solid #e0e0e0;   /* 預設灰框 */
-    border-radius: 50%;          /* 變成圓形 */
+    background-color: #fff;     
+    border: 2px solid #e0e0e0;  
+    border-radius: 50%;         
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 10px auto;    /* 置中，並與下方文字留距 */
+    margin: 0 auto 10px auto;   
     font-weight: bold;
-    color: #999;                 /* 預設灰字 */
+    color: #999;               
     transition: all 0.3s;
 }
 
-/* --- 文字標籤的樣式 --- */
 .step-label {
-    font-size: 0.9rem;
+    font-size: 16px;
     color: #999;
     margin: 0;
 }
 
-/* --- 狀態設計：已完成 (Completed) --- */
 .step.completed .step-circle {
-    background-color: #FFB6C1;   /* 實心粉紅底 */
-    border-color: #FFB6C1;       /* 粉紅框 */
-    color: white;                /* 白字 */
+    background-color: #FFB6C1;  
+    border-color: #FFB6C1;      
+    color: white;               
 }
 .step.completed .step-label {
-    color: #FFB6C1;              /* 文字也變粉紅 */
+    color: #FFB6C1;           
 }
 
-/* --- 👻 CSS 魔術進階：把已完成的連接線蓋上去 --- */
-/* 這個選擇器意思是：在「已完成」步驟後面的那條線 */
 .step.completed::after {
     content: '';
     position: absolute;
     top: 15px;
-    left: 50%;                   /* 從圓圈中間開始 */
-    width: 100%;                 /* 往右拉滿 */
+    left: 50%;                   
+    width: 100%;               
     height: 2px;
-    background-color: #FFB6C1;   /* 粉紅色線 */
-    z-index: -1;                 /* 放在圓圈後面，灰色線前面 */
+    background-color: #FFB6C1;   
+    z-index: -1;                 
 }
-/* 最後一個步驟不需要往後延伸的線，藏起來 */
+
 .step:last-child::after {
     display: none;
 }
 
 
-/* --- 狀態設計：目前進行中 (Active) --- */
+/* --- 目前步驟) --- */
 .step.active .step-circle {
     background-color: #fff;      /* 白底 */
     border-color: #FFB6C1;       /* 粉紅框 */
@@ -92,7 +85,6 @@
 }
 
 /* --- 佈局容器 --- */
-/* 用來限制內容最大寬度並置中的容器 */
 .wedding-step1 {
     max-width: 900px; /* 最大寬度不超過 900px */
     margin: 0 auto;   /* 上下邊距 0，左右自動 (置中關鍵) */
@@ -124,76 +116,147 @@
 .btn-next {
     background-color: #FFB6C1;
     color: white;
-    padding: 10px 30px;       /* 增加按鈕大小 */
-    border-radius: 20px;      /* 圓角樣式 */
-    text-decoration: none;    /* 移除超連結底線 */
+    padding: 10px 30px;     
+    border-radius: 20px;     
+    text-decoration: none;  
     display: inline-block;
     margin-left: 15px;
-    transition: 0.3s;         /* 讓狀態切換有動畫效果 */
+    transition: 0.3s;        
     
-    /* 預設狀態：禁用 (Disabled) */
-    opacity: 0.5;             /* 半透明，看起來不能按 */
-    pointer-events: none;     /* 關鍵：讓滑鼠點不到它，真的不能按 */
+    /* 預設禁用 */
+    opacity: 0.5;           
+    pointer-events: none;   
 }
 
-/* 當被 JS 加上 .active class 時的狀態：啟用 (Enabled) */
 .btn-next.active {
-    opacity: 1;               /* 恢復不透明 */
-    pointer-events: auto;     /* 恢復滑鼠事件，可以點擊了 */
-    cursor: pointer;          /* 滑鼠變手指 */
+    opacity: 1;               
+    pointer-events: auto;    
+    cursor: pointer;          
 }
 
-/* --- 商品列表 (Flexbox 網格系統) --- */
+/* --- 商品列表  --- */
 .product-grid {
-    display: flex;            /* 啟用 Flexbox 佈局 */
-    flex-wrap: wrap;          /* 允許換行 */
-    gap: 30px;                /* 卡片之間的間距 */
-    justify-content: center;  /* 整體置中對齊 */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(auto, auto);
+    height: 600px;
+    margin: 30px;
+    /* background-color: blue; */
+    align-items: end;
 }
 
 /* --- 個別商品卡片 --- */
 .product-card {
-    /* 計算寬度：(100% / 3) 減去 間距 */
-    /* 這樣才能精準的一排三個 */
-    width: calc(33.333% - 30px); 
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    max-width: 181px;
+    max-height: 280px;
+    margin: 20px;
 }
+
 .product-card img {
-    width: 100%;             /* 圖片自適應容器寬度 */
-    max-width: 200px;        /* 但最大不要超過 200px */
-    border-radius: 10px;     /* 圖片圓角 */
+    overflow: hidden;
+    width: 100%;            
+    max-width: 200px;      
+    border-radius: 10px;    
 }
 
 /* --- 加減控制條 --- */
 .control-bar {
-    display: flex;           /* 讓 icon 和數字橫排 */
-    align-items: center;     /* 垂直置中 */
-    justify-content: center; /* 水平置中 */
-    gap: 15px;               /* 拉開間距 */
+    display: flex;          
+    align-items: center;    
+    justify-content: center;
+    gap: 15px;              
     margin-top: 15px;
     font-size: 1.2rem;
     font-weight: bold;
 }
 .icon-btn {
-    cursor: pointer;         /* 滑鼠變手指 */
-    width: 30px;             /* 限制 icon 大小 */
+    cursor: pointer;        
+    width: 30px;            
     height: 30px;
     transition: transform 0.1s;
 }
 .icon-btn:active {
-    transform: scale(0.9);   /* 點擊時縮小的回饋感 */
+    transform: scale(0.9);  
 }
 
-/* --- RWD 響應式設計 (手機版) --- */
-/* 當螢幕寬度小於 768px 時觸發 */
 @media (max-width: 768px) {
+
+    /* 整個 Step 1 區塊左右收窄一點 */
+    .wedding-step1 {
+        max-width: 100%;
+        padding: 24px 16px 40px;
+        box-sizing: border-box;
+    }
+
+    /* 進度條文字縮小一點，避免擠在一起 */
+    .step-label {
+        font-size: 14px;
+    }
+
+    /* 標題區塊間距縮小 */
+    .header-section {
+        margin-bottom: 24px;
+    }
+
+    .sub-title {
+        font-size: 0.85rem;
+    }
+
+    .total-counter {
+        margin-top: 10px;
+        font-size: 0.95rem;
+    }
+
+    .btn-next {
+        display: inline-block;
+        margin-top: 8px;
+        padding: 8px 24px;
+        font-size: 0.9rem;
+    }
+
+    /* 商品列表：三欄改兩欄，高度自動，左右不要有大 margin */
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: auto;
+        height: auto;
+        margin: 16px 0 0;
+        row-gap: 24px;
+        column-gap: 12px;
+        justify-items: center;
+    }
+
+    /* 單一卡片縮小、取消大 margin，避免被擠爆 */
     .product-card {
-        /* 手機版改成一排兩個 */
-        width: calc(50% - 30px); 
+        max-width: 160px;
+        max-height: none;
+        margin: 0;
     }
-    /* 如果手機更小，想變一排一個，可以再加一個斷點：
-    @media (max-width: 480px) {
-        .product-card { width: 100%; }
+
+    .product-card img {
+        width: 100%;
+        max-width: 140px;
+        height: auto;
     }
-    */
+
+    .product-card p {
+        margin-top: 8px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* 加減控制條間距縮小 */
+    .control-bar {
+        gap: 10px;
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+
+    .icon-btn {
+        width: 26px;
+        height: 26px;
+    }
 }

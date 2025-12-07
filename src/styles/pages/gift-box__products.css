@@ -25,8 +25,6 @@
     max-width: 181px;
     max-height: 192px;
     margin: 60px;
-    /* background-color:chartreuse; */
-
 }
 
 
@@ -97,7 +95,7 @@
 }
 
 
-
+/* -------------------------購物車--------------------------- */
 
 .gift-box__cart {
     display: flex;
@@ -142,6 +140,103 @@
     border-radius: 30px;
     justify-content: space-between;
     align-items: center;
+}
+
+/* gift-box__products.css */
+
+/* 清單容器：設定高度，如果太多口味可以捲動 */
+.selected-list {
+    width: 100%;
+    margin-top: 15px;
+    max-height: 300px; /* 限制高度 */
+}
+
+/* 每一行口味項目的樣式 */
+.cart-item-row {
+    display: flex;
+    justify-content: space-between; /* 讓名字靠左，數量靠右 */
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #ccc; /* 加個分隔線比較清楚 */
+    font-size: 16px;
+    color: #333;
+}
+
+/* 總計區域 */
+.cart-total-info {
+    margin-top: 20px;
+    text-align: right;
+    font-weight: bold;
+    color: #555;
+}
+
+/* 覆寫原本的 cart-flavor 讓它版面彈性一點 */
+.cart-flavor {
+    border-bottom: 1px solid black;
+    height: auto; /* 原本是固定高度，改成 auto 隨內容長高 */
+    min-height: 200px;
+    width: 80%;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* gift-box__products.css */
+
+/* 新增的結算區塊容器 */
+.cart-summary {
+    width: 80%;
+    margin: 10px 0;
+    padding: 15px 0;
+    border-top: 1px solid #ccc; /* 上面加條線跟口味清單區隔 */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 上下間距 */
+}
+
+/* 禮盒數量控制列 */
+.box-quantity-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+/* 按鈕群組 */
+.quantity-btn-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #F6F7FB;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+/* 小型的加減按鈕 */
+.icon-sm {
+    cursor: pointer;
+    user-select: none; /* 防止一直點的時候反白文字 */
+    font-size: 14px;
+    padding: 2px 5px;
+}
+
+.icon-sm:active {
+    transform: scale(0.9); /* 按下去有縮小效果 */
+}
+
+/* 價格顯示列 */
+.price-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 價格數字特別顏色 */
+.price-text {
+    color: #E65540; /* 像蝦皮那樣的橘紅色，比較顯眼 */
+    font-size: 20px;
 }
 
 
@@ -214,4 +309,115 @@
     justify-content: center;
     width: 40px;
     height: 40px;
+}
+@media screen and (max-width: 768px) {
+
+    /* 整個挑選區改成直式堆疊 */
+    .gift-box__products {
+        flex-direction: column;      /* 左右改上下 */
+        align-items: stretch;
+        padding: 40px 16px;
+        gap: 24px;
+    }
+
+    /* 左側小購物車：全寬、改為自適應高度 */
+    .gift-box__cart {
+        width: 100%;
+        max-width: 480px;
+        height: auto;
+        margin: 0 auto;
+        padding: 16px 20px;
+        box-sizing: border-box;
+    }
+
+    .cart-flavor {
+        width: 100%;
+        margin: 16px 0;
+        min-height: 160px;
+    }
+
+    .cart-summary {
+        width: 100%;
+        margin: 8px 0 0 0;
+    }
+
+    .cart-control {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cart-btn {
+        width: 100%;
+        max-width: 260px;
+        text-align: center;
+    }
+
+    /* 右側口味區：全寬 */
+    .gift-box__item {
+        width: 100%;
+    }
+
+    .header-title {
+        margin: 0 0 16px 0;
+        padding: 0 4px;
+    }
+
+    /* 口味卡片：三欄改兩欄，高度自動、縮小間距 */
+    .gift-box__flavor {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: auto;
+        height: auto;            /* 不再固定 600px */
+        margin: 50px 0 0 0 ;
+        row-gap: 70px;
+        column-gap: 12px;
+        justify-items: center;
+    }
+
+    .gift-box__card {
+        margin: 0;
+        max-width: 160px;
+    }
+
+    .gift-box__card img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .gift-box__card p {
+        font-size: 16px;
+        margin: 8px 0;
+        text-align: center;
+    }
+
+    .gift-box__card .select {
+        width: 140px;
+        height: 34px;
+        padding: 6px 10px;
+        box-sizing: border-box;
+    }
+
+    .icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* 下方「任選禮盒」區：手機版一欄置中 */
+    .gift-box .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 40px 16px;
+        box-sizing: border-box;
+       
+    }
+
+    .gift-box__box {
+        gap: 24px;
+    }
+
+    .gift-box__box .card {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
 }

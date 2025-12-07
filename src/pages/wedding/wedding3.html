@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../../styles/components/footer.css">
     <link rel="stylesheet" href="../../styles/components/banner.css">
     <link rel="stylesheet" href="../../styles/pages/wedding3.css">
-    <script src="../../scripts/header.js"></script>
+
 </head>
 
 <body>
@@ -23,7 +23,17 @@
             </a>
         </div>
         <div class="site-header__nav">
-            <ul>
+            <div class="hamburger-menu" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-list">
+                <li class="mobile-menu-logo">
+                    <a href="../../../index.html"> <img src="../../assets/images/ui/ImageToStl.com_dessert 1.png"
+                            alt="Logo">
+                    </a>
+                </li>
                 <li><a href="../../pages/gift-box/gift-box.html">
                         <div class="zh">線上購買</div>
                         <div class="en">Shop</div>
@@ -41,6 +51,8 @@
                         <div class="en">FAQ</div>
                     </a></li>
             </ul>
+            <div class="nav-backdrop" id="nav-backdrop"></div>
+
             <div class="site-header__cart">
                 <img src="../../assets/icons/icon-cart.png" alt="購物車">
             </div>
@@ -168,6 +180,7 @@
             <p>本網站僅為個人作品展示，非實際商業營運網站。</p>
         </div>
     </footer>
+    <script src="../../scripts/header.js"></script>
 </body>
 
 </html>

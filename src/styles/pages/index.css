@@ -1,5 +1,6 @@
 .hero {
-    height: 960px;
+    min-height: 100vh;
+    height: 100vh;  /* 讓首屏永遠吃滿一個螢幕 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,14 +49,15 @@
 }
 
 .flavor-introduce .btn-cta a {
+    background-color: #FFB6C1;
+    color: white;
+    padding: 10px 30px;     
+    border-radius: 20px;     
+    text-decoration: none;  
     display: inline-block;
-    margin-top: 16px;
-    padding: 8px 32px;
-    border-radius: 999px;
-    background-color: #E8AE37;
-    color: #fff;
-    font-size: 14px;
-    letter-spacing: 0.2em;
+    margin-left: 15px;
+    transition: 0.3s;  
+    margin-top: 30px;
 }
 
 .flavor-introduce__list {
@@ -79,6 +81,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
 }
 
 .steps__header {
@@ -123,6 +126,8 @@
 
 .steps__item .pic img {
     max-width: 260px;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+
 }
 
 .steps__item .content {
@@ -138,13 +143,14 @@
 }
 
 .steps__cta a {
+    background-color: #FFB6C1;
+    color: white;
+    padding: 10px 30px;     
+    border-radius: 20px;     
+    text-decoration: none;  
     display: inline-block;
-    padding: 8px 32px;
-    border-radius: 999px;
-    background-color: #E8AE37;
-    color: #fff;
-    font-size: 14px;
-    letter-spacing: 0.2em;
+    margin-left: 15px;
+    transition: 0.3s;  
 }
 
 /* ----------------section03----------------- */
@@ -170,8 +176,10 @@
     transition: transform 0.3s ease;
 }
 
-.product-section .card:hover img{
-     transform: scale(1.15);
+.product-section .card:hover img {
+    transform: scale(1.15);
+    backdrop-filter: blur(8px);
+    
 }
 
 .product-section .btn {
@@ -188,3 +196,110 @@
     letter-spacing: 0.15em;
 }
 
+
+
+
+/* --------輪播圖--------- */
+
+
+
+.steps .swiper {
+    max-width: 1280px;
+    width: 100%;
+    height: auto;       
+}
+
+.steps .swiper-slide {
+    height: auto;
+}
+
+/* 口味介紹區塊 */
+.introduce {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    /* 置中，跟下方圖片保持距離 */
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* 半透明白底 */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    /* 輕微陰影 */
+    transition: opacity 0.3s ease;
+    /* 淡入淡出特效 */
+    min-height: 150px;
+    /* 固定高度，避免文字長短造成版面跳動 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduce h2 {
+    font-size: 24px;
+    color: #E8AE37;
+    /* 品牌金 */
+    margin-bottom: 12px;
+    letter-spacing: 0.1em;
+}
+
+.introduce p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* 圖片列表美化 */
+.flavor-introduce__list figure {
+    cursor: pointer;
+    /* 讓滑鼠變手指 */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* 彈跳效果 */
+    opacity: 0.6;
+    /* 沒選中的比較淡 */
+    transform: scale(0.9);
+}
+
+.flavor-introduce__list figure img {
+    width: 80px;
+    /* 設定圖片大小統一 */
+    height: auto;
+    display: block;
+}
+
+/* 被選中的狀態 (由 JS 控制) */
+.flavor-introduce__list figure.active {
+    opacity: 1;
+    /* 變清楚 */
+    transform: scale(1.15) translateY(-10px);
+    /* 放大並浮起來 */
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.15));
+    /* 加陰影 */
+}
+
+/* 滑鼠滑過的狀態 */
+.flavor-introduce__list figure:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px){
+    .steps__item-header{
+        text-align: center;
+    }
+    .steps__item{
+        display: flex;
+        flex-direction: column;
+
+        
+    }
+
+    .content p{
+        display: none;
+    }
+}
+@media screen and (min-width: 769px) {
+    .hero {
+        margin-top: -150px;   /* 負值大約等於 header 的高度 */
+        padding-top: 150px;   /* 補回被 header 蓋住的空間 */
+    }
+}

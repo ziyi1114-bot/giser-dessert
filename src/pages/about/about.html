@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../../styles/components/footer.css">
     <link rel="stylesheet" href="../../styles/components/banner.css">
     <link rel="stylesheet" href="../../styles/pages/about.css">
-    <script src="././scripts/header.js"></script>
+
 </head>
 
 <body>
@@ -23,7 +23,17 @@
             </a>
         </div>
         <div class="site-header__nav">
-            <ul>
+            <div class="hamburger-menu" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-list">
+                <li class="mobile-menu-logo">
+                    <a href="../../../index.html"> <img src="../../assets/images/ui/ImageToStl.com_dessert 1.png"
+                            alt="Logo">
+                    </a>
+                </li>
                 <li><a href="../../pages/gift-box/gift-box.html">
                         <div class="zh">線上購買</div>
                         <div class="en">Shop</div>
@@ -41,6 +51,8 @@
                         <div class="en">FAQ</div>
                     </a></li>
             </ul>
+            <div class="nav-backdrop" id="nav-backdrop"></div>
+
             <div class="site-header__cart">
                 <img src="../../assets/icons/icon-cart.png" alt="購物車">
             </div>
@@ -146,38 +158,6 @@
             </div>
         </section>
 
-        <section class="about-scenes">
-            <div class="container">
-                <header class="about-section-header">
-                    <h2>把可麗露放進哪些日常裡</h2>
-                    <p>不是很正式的時刻，也值得好好被對待。</p>
-                </header>
-                <div class="about-scenes__grid">
-                    <article class="about-card">
-                        <h3>給自己的午後</h3>
-                        <p>
-                            工作告一段落、課程結束後，回家泡一壺茶或咖啡，
-                            把可麗露當作結束今天任務的小儀式。
-                        </p>
-                    </article>
-                    <article class="about-card">
-                        <h3>送給重要的人</h3>
-                        <p>
-                            想謝謝同事幫忙、想安慰最近辛苦的朋友，
-                            帶上一盒可麗露，陪對方在忙碌日子裡喘口氣。
-                        </p>
-                    </article>
-                    <article class="about-card">
-                        <h3>成為婚禮的小細節</h3>
-                        <p>
-                            搭配婚禮小物專區的客製包裝，讓每一位賓客在回家後，
-                            都能再咬一口可麗露，想起那天的儀式感。
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <section class="about-more">
             <div class="container">
                 <div class="about-more__inner">
@@ -251,6 +231,7 @@
             <p>本網站僅為個人作品展示，非實際商業營運網站。</p>
         </div>
     </footer>
+    <script src="../../scripts/header.js"></script>
 </body>
 
 </html>

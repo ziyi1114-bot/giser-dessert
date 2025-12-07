@@ -181,3 +181,139 @@
     letter-spacing: 0.2em;
     text-decoration: none;
 }
+
+@media screen and (max-width: 768px) {
+
+    /* 首段：品牌介紹 */
+    .about-intro {
+        padding: 48px 0;
+    }
+
+    .about-intro .container {
+        flex-direction: column;   /* 圖文上下排 */
+        align-items: stretch;
+        gap: 24px;
+        padding: 0 16px;
+    }
+
+    .about-intro__text h2 {
+        font-size: 20px;
+        letter-spacing: 0.2em;
+        margin-bottom: 8px;
+    }
+
+    .about-intro__tagline {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .about-intro__text p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .about-intro__image img {
+        max-width: 280px;
+        border-radius: 20px;
+    }
+
+    /* 區塊共用標題區，左右加內距避免貼邊 */
+    .about-section-header {
+        padding: 0 16px;
+        margin-bottom: 24px;
+    }
+
+    .about-section-header h2 {
+        font-size: 20px;
+        letter-spacing: 0.2em;
+    }
+
+    .about-section-header p {
+        font-size: 13px;
+    }
+
+    /* 我們在乎的三件事：三欄 → 一欄 */
+    .about-values {
+        padding: 56px 0;
+    }
+
+    .about-values .container {
+        padding: 0 16px;
+    }
+
+    .about-values__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .about-card {
+        padding: 20px 16px;
+    }
+
+    .about-card h3 {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .about-card p {
+        font-size: 14px;
+    }
+
+    /* 時間軸：三欄 → 一欄，縮短整體高度 */
+    .about-timeline {
+        padding: 56px 0;
+    }
+
+    .about-timeline .container {
+        padding: 0 16px;
+    }
+
+    .about-timeline__list {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 100%;
+    }
+
+    .about-timeline__item {
+        padding: 18px 16px;
+    }
+
+    .about-timeline__item h3 {
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+
+
+    /* 最後引導區：左右改上下堆疊，按鈕全寬 */
+    .about-more {
+        padding: 48px 0 56px;
+    }
+
+    .about-more .container {
+        padding: 0 16px;
+    }
+
+    .about-more__inner {
+        padding: 20px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .about-more__text h2 {
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+
+    .about-more__text p {
+        font-size: 13px;
+    }
+
+    .about-more__btn {
+        width: 100%;
+        justify-content: center;
+        margin-top: 4px;
+        font-size: 13px;
+        padding: 8px 0;
+    }
+}

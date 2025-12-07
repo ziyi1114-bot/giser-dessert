@@ -1,5 +1,4 @@
-// 控制上傳區塊顯示/隱藏的函式
-// HTML 裡的 onclick="toggleUpload(true/false)" 會呼叫這個
+
 function toggleUpload(show) {
     const uploadSection = document.getElementById('upload-section');
     if (show) {
@@ -9,7 +8,7 @@ function toggleUpload(show) {
     }
 }
 
-// 監聽檔案選擇，顯示檔名 (優化體驗)
+// 監聽檔案選擇，顯示檔名
 document.addEventListener('DOMContentLoaded', function() {
     const realInput = document.getElementById('real-file-input');
     const fileNameDisplay = document.getElementById('file-name-display');

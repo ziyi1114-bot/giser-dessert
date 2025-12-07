@@ -12,24 +12,48 @@
     <link rel="stylesheet" href="../../styles/components/footer.css">
     <link rel="stylesheet" href="../../styles/components/banner.css">
     <link rel="stylesheet" href="../../styles/pages/wedding.css">
-    <script src="../../scripts/header.js"></script>
+
 
 </head>
 
 <body>
-    <header class="site-header" id="header-scroll">
+   <header class="site-header" id="header-scroll">
         <div class="site-header__inner">
             <a class="site-header__logo" href="../../../index.html">
                 <img src="../../assets/images/ui/ImageToStl.com_dessert 1.png" alt="吉舍甜食可麗露LOGO">
             </a>
         </div>
         <div class="site-header__nav">
-            <ul>
-                <li><a href="../../pages/gift-box/gift-box.html"><div class="zh">線上購買</div><div class="en">Shop</div></a></li>
-                <li><a href="../../pages/wedding/wedding.html"><div class="zh">婚禮小物</div><div class="en">Wedding</div></a></li>
-                <li><a href="../../pages/about/about.html"><div class="zh">關於我們</div><div class="en">About</div></a></li>
-                <li><a href="../../pages/faq/faq-section.html"><div class="zh">常見問題</div><div class="en">FAQ</div></a></li>
+            <div class="hamburger-menu" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-list">
+                <li class="mobile-menu-logo">
+                    <a href="../../../index.html"> <img src="../../assets/images/ui/ImageToStl.com_dessert 1.png"
+                            alt="Logo">
+                    </a>
+                </li>
+                <li><a href="../../pages/gift-box/gift-box.html">
+                        <div class="zh">線上購買</div>
+                        <div class="en">Shop</div>
+                    </a></li>
+                <li><a href="../../pages/wedding/wedding.html">
+                        <div class="zh">婚禮小物</div>
+                        <div class="en">Wedding</div>
+                    </a></li>
+                <li><a href="../../pages/about/about.html">
+                        <div class="zh">關於我們</div>
+                        <div class="en">About</div>
+                    </a></li>
+                <li><a href="../../pages/faq/faq-section.html">
+                        <div class="zh">常見問題</div>
+                        <div class="en">FAQ</div>
+                    </a></li>
             </ul>
+            <div class="nav-backdrop" id="nav-backdrop"></div>
+
             <div class="site-header__cart">
                 <img src="../../assets/icons/icon-cart.png" alt="購物車">
             </div>
@@ -37,13 +61,13 @@
     </header>
     <div class="banner">
         <div class="banner-container">
-        <div class="banner-title">
-            <h1>wedding</h1>
-            <h1>婚禮小物</h1>
-        </div>
-        <div class="banner-pic">
-            <img src="../../assets/images/banner/banner.png" alt="">
-        </div>
+            <div class="banner-title">
+                <h1>wedding</h1>
+                <h1>婚禮小物</h1>
+            </div>
+            <div class="banner-pic">
+                <img src="../../assets/images/banner/banner.png" alt="">
+            </div>
         </div>
     </div>
 
@@ -51,30 +75,30 @@
     <main>
         <section class="wedding-step1">
             <div class="steps-container" style="margin-bottom: 40px;">
-        <div class="step active"> <div class="step-circle">1</div>
-            <p class="step-label">選數量及口味</p>
-        </div>
-        <div class="step">
-            <div class="step-circle">2</div>
-            <p class="step-label">選包裝及上傳卡片</p>
-        </div>
-        <div class="step">
-            <div class="step-circle">3</div>
-            <p class="step-label">選定日期及地點</p>
-        </div>
-    </div>
+                <div class="step active">
+                    <div class="step-circle">1</div>
+                    <p class="step-label">選數量及口味</p>
+                </div>
+                <div class="step">
+                    <div class="step-circle">2</div>
+                    <p class="step-label">選包裝及上傳卡片</p>
+                </div>
+                <div class="step">
+                    <div class="step-circle">3</div>
+                    <p class="step-label">選定日期及地點</p>
+                </div>
+            </div>
 
-    <div class="header-section">
-        <h2>[Step 1] 選擇數量及口味</h2>
-        <p class="sub-title">數量以 10 個為單位</p>
-        <div class="total-counter">
-            目前總共: <span id="total-count-display" class="highlight">0</span> 個
-            <a href="wedding2.html" id="btn-next-step" class="btn-next">下一步</a>
-        </div>
-    </div>
+            <div class="header-section">
+                <h2>[Step 1] 選擇數量及口味</h2>
+                <p class="sub-title">數量以 10 個為單位</p>
+                <div class="total-counter">
+                    目前總共: <span id="total-count-display" class="highlight">0</span> 個
+                    <a href="wedding2.html" id="btn-next-step" class="btn-next">下一步</a>
+                </div>
+            </div>
 
-    <div id="product-grid-container" class="product-grid">
-        </div>
+            <div id="product-grid-container" class="product-grid">
             </div>
         </section>
     </main>
@@ -132,6 +156,7 @@
             <p>本網站僅為個人作品展示，非實際商業營運網站。</p>
         </div>
     </footer>
+    <script src="../../scripts/header.js"></script>
     <script src="../../scripts/wedding.js"></script>
 </body>
 

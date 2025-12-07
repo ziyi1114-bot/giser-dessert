@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../../styles/components/footer.css">
     <link rel="stylesheet" href="../../styles/components/banner.css">
     <link rel="stylesheet" href="../../styles/pages/faq-section.css">
-    <script src="../../scripts/header.js"></script>
+
 
 </head>
 
@@ -24,16 +24,41 @@
             </a>
         </div>
         <div class="site-header__nav">
-            <ul>
-                <li><a href="../../pages/gift-box/gift-box.html"><div class="zh">線上購買</div><div class="en">Shop</div></a></li>
-                <li><a href="../../pages/wedding/wedding.html"><div class="zh">婚禮小物</div><div class="en">Wedding</div></a></li>
-                <li><a href="../../pages/about/about.html"><div class="zh">關於我們</div><div class="en">About</div></a></li>
-                <li><a href="../../pages/faq/faq-section.html"><div class="zh">常見問題</div><div class="en">FAQ</div></a></li>
+            <div class="hamburger-menu" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-list">
+                <li class="mobile-menu-logo">
+                    <a href="../../../index.html"> <img src="../../assets/images/ui/ImageToStl.com_dessert 1.png"
+                            alt="Logo">
+                    </a>
+                </li>
+                <li><a href="../../pages/gift-box/gift-box.html">
+                        <div class="zh">線上購買</div>
+                        <div class="en">Shop</div>
+                    </a></li>
+                <li><a href="../../pages/wedding/wedding.html">
+                        <div class="zh">婚禮小物</div>
+                        <div class="en">Wedding</div>
+                    </a></li>
+                <li><a href="../../pages/about/about.html">
+                        <div class="zh">關於我們</div>
+                        <div class="en">About</div>
+                    </a></li>
+                <li><a href="../../pages/faq/faq-section.html">
+                        <div class="zh">常見問題</div>
+                        <div class="en">FAQ</div>
+                    </a></li>
             </ul>
+            <div class="nav-backdrop" id="nav-backdrop"></div>
+
             <div class="site-header__cart">
                 <img src="../../assets/icons/icon-cart.png" alt="購物車">
             </div>
         </div>
+    </header>
     </header>
     <div class="banner">
         <div class="banner-container">
@@ -190,6 +215,7 @@
         </div>
     </footer>
     <script src="../../scripts/faq.js"></script>
+    <script src="../../scripts/header.js"></script>
 </body>
 
 </html>

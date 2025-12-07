@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="../../styles/components/footer.css">
     <link rel="stylesheet" href="../../styles/components/banner.css">
     <link rel="stylesheet" href="../../styles/pages/gift-box__products.css">
-    <script src="../../scripts/header.js"></script>
 
 </head>
 
@@ -24,7 +23,17 @@
             </a>
         </div>
         <div class="site-header__nav">
-            <ul>
+            <div class="hamburger-menu" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-list">
+                <li class="mobile-menu-logo">
+                    <a href="../../../index.html"> <img src="../../assets/images/ui/ImageToStl.com_dessert 1.png"
+                            alt="Logo">
+                    </a>
+                </li>
                 <li><a href="../../pages/gift-box/gift-box.html">
                         <div class="zh">線上購買</div>
                         <div class="en">Shop</div>
@@ -42,6 +51,8 @@
                         <div class="en">FAQ</div>
                     </a></li>
             </ul>
+            <div class="nav-backdrop" id="nav-backdrop"></div>
+
             <div class="site-header__cart">
                 <img src="../../assets/icons/icon-cart.png" alt="購物車">
             </div>
@@ -63,7 +74,33 @@
         <section class="gift-box__products">
             <div class="gift-box__cart">
                 <div class="cart-flavor">
-                    <span>已挑選口味:</span><br> <span id="flavor-name"></span><span id="total-count"></span> 
+                    <h3>已挑選口味清單：</h3>
+                    <div id="selected-list-container" class="selected-list">
+                    </div>
+
+                    <div class="cart-total-info">
+                        口味總數：<span id="cart-total-count">0</span> / 10
+                    </div>
+                </div>
+
+                <div class="cart-summary">
+
+                    <div class="box-quantity-control">
+                        <span>禮盒數量：</span>
+                        <div class="quantity-btn-group">
+                            <div class="icon-sm" onclick="updateBoxQty(-1)">➖</div>
+
+                            <span id="box-qty-display">1</span>
+
+                            <div class="icon-sm" onclick="updateBoxQty(1)">➕</div>
+                        </div>
+                    </div>
+
+                    <div class="price-display">
+                        <span>總金額：</span>
+                        <span class="price-text">NT$ <span id="total-price">999</span></span>
+                    </div>
+
                 </div>
                 <div class="cart-control">
                     <div class="cart-btn" id="btn-add-to-cart">加入購物車</div>
@@ -77,7 +114,7 @@
                         <div id="progress-fill" class="progress-fill"></div>
                         <span id="progress-text" class="progress-text">0 / 10</span>
                     </div>
-                    
+
                 </header>
 
                 <div class="gift-box__flavor" id="flavor-container">
@@ -161,7 +198,8 @@
             <p>本網站僅為個人作品展示，非實際商業營運網站。</p>
         </div>
     </footer>
-        <script src="../../scripts/git-box(10).js"></script>
+    <script src="../../scripts/header.js"></script>
+    <script src="../../scripts/git-box(10).js"></script>
 </body>
 
 </html>

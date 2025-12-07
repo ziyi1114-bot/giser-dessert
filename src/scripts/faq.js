@@ -1,10 +1,10 @@
-
-
-let accordionControl = document.getElementsByClassName("accordion-header")
-let accordionPanel = document.getElementById("accordion-panel")
-
-accordionControl.addEventListener('click', function(){
-    console.log("功能正廠");
-    
-    accordionPanel.classList.toggle('open')
-})
+document.addEventListener("DOMContentLoaded", function() {
+   let headers = document.querySelectorAll('.accordion-header');
+    headers.forEach(header => {
+        header.addEventListener('click', function() {
+            let itemContainer = this.closest(".accordion-item");
+            itemContainer.classList.toggle('active');
+            
+        });
+    });
+});

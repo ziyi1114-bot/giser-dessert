@@ -1,5 +1,8 @@
 .fqa-section .container {
-    width: 1280px;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,34 +53,61 @@
     display: none;
 }
 
-#arrow-control:checked~.accordion-header> .arrow-down .bar1 {
+.accordion-item.active .accordion-header .arrow-down .bar1 {
     top: 15px;
     rotate: 315deg;
 }
 
-#arrow-control:checked~.accordion-header> .arrow-down .bar2 {
+.accordion-item.active .accordion-header .arrow-down .bar2 {
     top: 15px;
     rotate: 225deg;
 }
 
 
+
 .accordion-item {
-    display: flex;
-    flex-direction: column;
-    margin: 20px 0;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+
 }
 
 .accordion-header {
+    background-color: #f5f5f5;
+    padding: 15px;
+    cursor: pointer;
+    /* 讓滑鼠變手指 */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: azure; */
+    transition: background-color 0.3s;
 }
 
-.accordion-panel{
-  display: none;
+.accordion-header:hover {
+    background-color: #e9e9e9;
 }
 
-.open{
+.accordion-panel {
+    display: none;
+    padding: 16px;
+    background-color: #fff;
+    border-top: 1px solid transparent;
+
+}
+
+.accordion-item.active .accordion-panel {
     display: block;
+    /* 顯示出來 */
+    border-top-color: #ddd;
+    /* 顯示分隔線 */
+
+}
+
+/* (選配) 讓標題在展開時變色，增加視覺回饋 */
+.accordion-item.active .accordion-header {
+    background-color: #FFB6C1;
+    /* 變成粉紅色 */
+    color: white;
+
 }
