@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gishé Dessert｜可麗露專門</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="src/styles/base/reset.css">
     <link rel="stylesheet" href="src/styles/base/typography.css">
     <link rel="stylesheet" href="src/styles/components/header.css">
     <link rel="stylesheet" href="src/styles/main/main.css">
     <link rel="stylesheet" href="src/styles/components/footer.css">
     <link rel="stylesheet" href="src/styles/pages/index.css">
-    <script src="src/scripts/header.js"></script>
+
 
 
 </head>
@@ -24,12 +25,36 @@
             </a>
         </div>
         <div class="site-header__nav">
-            <ul>
-                <li><a href="src/pages/gift-box/gift-box.html"><div class="zh">線上購買</div><div class="en">Shop</div></a></li>
-                <li><a href="src/pages/wedding/wedding.html"><div class="zh">婚禮小物</div><div class="en">Wedding</div></a></li>
-                <li><a href="src/pages/about/about.html"><div class="zh">關於我們</div><div class="en">About</div></a></li>
-                <li><a href="src/pages/faq/faq-section.html"><div class="zh">常見問題</div><div class="en">FQA</div></a></li>
+            <div class="hamburger-menu" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-list">
+                <li class="mobile-menu-logo">
+                    <a href="../../../index.html"> <img src="src/assets/images/ui/ImageToStl.com_dessert 1.png"
+                            alt="Logo">
+                    </a>
+                </li>
+                <li><a href="src/pages/gift-box/gift-box.html">
+                        <div class="zh">線上購買</div>
+                        <div class="en">Shop</div>
+                    </a></li>
+                <li><a href="src/pages/wedding/wedding.html">
+                        <div class="zh">婚禮小物</div>
+                        <div class="en">Wedding</div>
+                    </a></li>
+                <li><a href="src/pages/about/about.html">
+                        <div class="zh">關於我們</div>
+                        <div class="en">About</div>
+                    </a></li>
+                <li><a href="src/pages/faq/faq-section.html">
+                        <div class="zh">常見問題</div>
+                        <div class="en">FAQ</div>
+                    </a></li>
             </ul>
+            <div class="nav-backdrop" id="nav-backdrop"></div>
+
             <div class="site-header__cart">
                 <img src="src/assets/icons/icon-cart.png" alt="購物車">
             </div>
@@ -53,12 +78,12 @@
                     </div>
                 </header>
                 <!-- 口味介紹區塊 -->
-                <div class="introduce"> 
+                <div class="introduce">
                     <h2 id="introduce_title">這裡要放口味介紹</h2>
                     <p id="introduce_content"></p>
                 </div>
                 <div class="flavor-introduce__list">
-                    <figure class="flavor-chocolate" >
+                    <figure class="flavor-chocolate active">
                         <img src="src/assets/images/index/flavor-chocolate.png" alt="可麗露口味-法芙娜可可">
                     </figure>
                     <figure class="valrhona">
@@ -85,59 +110,117 @@
             </div>
         </section>
         <section class="steps">
-            <div class="container">
-                <header class="steps__header">
-                    <h2>從第一口甜開始，一直到永遠。</h2>
-                    <p>為重要的日子，留下一份手作的香氣。</p>
-                </header>
-                <div class="steps__item">
-                    <div class="steps__item-header">
-                        <h2>step1</h2>
-                        <h2>選擇數量及口味</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="container">
+                            <header class="steps__header">
+                                <h2>從第一口甜開始，一直到永遠。</h2>
+                                <p>為重要的日子，留下一份手作的香氣。</p>
+                            </header>
+                            <div class="steps__item">
+                                <div class="steps__item-header">
+                                    <h2>step1</h2>
+                                    <h2>選擇數量及口味</h2>
+                                </div>
+                                <div class="pic">
+                                    <img src="src/assets/images/index/step1.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <p>婚禮的甜點，就像幸福的前奏。從經典的香草、濃郁的可可，到清新的抹茶，每一顆可麗露都擁有獨特香氣與口感。你可以依照婚禮主題與賓客喜好，自由搭配專屬的風味組</p>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="pic">
-                        <img src="src/assets/images/index/section2-step1.png" alt="">
+                    <div class="swiper-slide">
+                        <div class="container">
+                            <header class="steps__header">
+                                <h2>繫上緞帶的那刻，是心意的延續。</h2>
+                                <p>為這份甜點，穿上最優雅的外衣。</p>
+                            </header>
+                            <div class="steps__item">
+                                <div class="steps__item-header">
+                                    <h2>step2</h2>
+                                        <h2>挑選精緻包裝</h2>
+                                </div>
+                                <div class="pic">
+                                    <img src="src/assets/images/index/step2.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <p>包裝不僅是保護，更是品味的展現。從簡約透亮的方盒，到質感溫潤的禮盒，搭配手工繫上的絲柔緞帶與封蠟。您可以依照婚禮色系與風格，挑選最完美的搭配，讓賓客在收到禮物的瞬間，就能感受到滿滿的儀式感與驚喜。
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="content">
-                        <p>婚禮的甜點，就像幸福的前奏。從經典的香草、濃郁的可可，到清新的抹茶，每一顆可麗露都擁有獨特香氣與口感。你可以依照婚禮主題與賓客喜好，自由搭配專屬的風味組</p>
+                    <div class="swiper-slide">
+                        <div class="container">
+                            <header class="steps__header">
+                                <h2>定格美好瞬間，分享專屬喜悅。</h2>
+                                <p>將你們的笑容，印刻在甜點的記憶裡。</p>
+                            </header>
+                            <div class="steps__item">
+                                <div class="steps__item-header">
+                                    <h2>step3</h2>
+                                    <h2>上傳照片及確認</h2>
+                                </div>
+                                <div class="pic">
+                                    <img src="src/assets/images/index/step3.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <p>獨一無二的婚禮，值得擁有專屬的印記。請上傳您們的婚紗照或生活合影，我們將為您製作成專屬的謝卡或吊牌。在送出這份甜蜜之前，請再次檢視您的訂單細節與收件資訊，讓我們將這份精心準備的幸福，準確且完美地傳遞到每一位賓客手中。
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
+
                 </div>
-                <div class="steps__cta">
-                    <a href="src/pages/wedding/wedding.html">立即預約</a>
+
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <div class="steps__cta">
+                <a href="src/pages/wedding/wedding.html">立即預約</a>
+            </div>
+        </section>
+        <section class="product-section">
+            <div class=" product-section__grid">
+                <div class="card">
+                    <a class="gift-box__(6)" href="src/pages/gift-box/gift-box.html">
+
+                        <img src="src/assets/images/index/section3-card1.png" alt="">
+                    </a>
+                </div>
+
+
+                <div class="card">
+                    <a class="gift-box__(3)" href="src/pages/gift-box/gift-box.html">
+                        <img src="src/assets/images/index/section3-card2.png" alt="">
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a class="gift-flower__(1)" href="src/pages/gift-box/gift-box.html">
+                        <img src="src/assets/images/index/section3-card3.png" alt="">
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a class="gift-flower__(10)" href="src/pages/gift-box/gift-box.html">
+
+                        <img src="src/assets/images/index/section3-card4.png" alt="">
+
+                    </a>
                 </div>
             </div>
-            </section>
-            <section class="product-section">
-                <div class=" product-section__grid">
-                    <div class="card">
-                        <a class="gift-box__(6)"href="src/pages/gift-box/gift-box.html">
-
-                            <img src="src/assets/images/index/section3-card1.png" alt="">
-                        </a>
-                    </div>
-
-
-                    <div class="card">
-                        <a class="gift-box__(3)" href="src/pages/gift-box/gift-box.html">
-                            <img src="src/assets/images/index/section3-card2.png" alt="">
-                        </a>
-                    </div>
-
-                    <div class="card">
-                        <a class="gift-flower__(1)" href="src/pages/gift-box/gift-box.html">
-                            <img src="src/assets/images/index/section3-card3.png" alt="">
-                        </a>
-                    </div>
-
-                    <div class="card">
-                        <a class="gift-flower__(10)" href="src/pages/gift-box/gift-box.html">
-
-                            <img src="src/assets/images/index/section3-card4.png" alt="">
-
-                        </a>
-                    </div>
-                </div>
-            </section>
+        </section>
     </main>
     <footer class="site-footer">
         <div class="footer-main">
@@ -191,7 +274,10 @@
             <p>本網站僅為個人作品展示，非實際商業營運網站。</p>
         </div>
     </footer>
+    <script src="src/scripts/header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="src/scripts/index.js"></script>
+
 </body>
 
 </html>
