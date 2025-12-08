@@ -74,6 +74,7 @@
 
 .steps {
     text-align: center;
+
 }
 
 .steps .container {
@@ -139,7 +140,10 @@
 }
 
 .steps__cta {
-    margin-top: 32px;
+   display: flex;
+   margin-top: 32px;
+   align-items: center;
+   justify-content: center;
 }
 
 .steps__cta a {
@@ -149,7 +153,6 @@
     border-radius: 20px;     
     text-decoration: none;  
     display: inline-block;
-    margin-left: 15px;
     transition: 0.3s;  
 }
 
