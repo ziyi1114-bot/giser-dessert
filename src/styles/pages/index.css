@@ -212,6 +212,9 @@
 .steps .swiper-slide {
     height: auto;
 }
+.swiper-button-next, .swiper-button-prev{
+    color:#FFB6C1;
+}
 
 /* 口味介紹區塊 */
 .introduce {
@@ -219,12 +222,9 @@
     margin: 0 auto 40px auto;
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.8);
-    /* 半透明白底 */
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    /* 輕微陰影 */
     transition: opacity 0.3s ease;
-    /* 淡入淡出特效 */
     min-height: 150px;
     display: flex;
     flex-direction: column;
