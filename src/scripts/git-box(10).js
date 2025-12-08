@@ -146,6 +146,5 @@ function updateCount(products, change) {
 }
 
 
-// 初始化
 render();
 renderPriceInfo();
