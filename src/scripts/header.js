@@ -1,4 +1,3 @@
-// src/scripts/header.js
 
 document.addEventListener("DOMContentLoaded", function () {
   const headerNav = document.querySelector(".site-header__nav");
@@ -26,20 +25,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // 點漢堡：開關選單
+  // 開關選單
   hamburgerBtn.addEventListener("click", toggleMenu);
 
-  // 點選單連結：關閉選單
+
   navLinks.forEach((link) => {
     link.addEventListener("click", closeMenu);
   });
 
-  // 點背景遮罩：關閉選單
+
   if (navBackdrop) {
     navBackdrop.addEventListener("click", closeMenu);
   }
 
-  // 視窗放大回桌機：自動收合
+
   window.addEventListener("resize", function () {
     if (window.innerWidth > 768 && headerNav.classList.contains("active")) {
       closeMenu();

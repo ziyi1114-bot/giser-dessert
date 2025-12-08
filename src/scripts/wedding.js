@@ -1,8 +1,4 @@
-// js/step1-wedding.js
 
-// --- Part 1: 資料定義 (Model) ---
-// 定義一個常數，代表每次增加的單位
-// 資工系習慣：Magic Number 要提取成常數
 const STEP_MAX = 10; 
 
 const weddingFlavors = [
@@ -14,7 +10,6 @@ const weddingFlavors = [
     { id: 'taro', name: '芋泥鹹蛋黃', img: '../../assets/images/index/flavor-taro-salted-egg-yolk.png', count: 0 }
 ];
 
-// --- Part 2: 渲染與互動邏輯 (View & Controller) ---
 function render() {
     const container = document.getElementById('product-grid-container');
     const totalDisplay = document.getElementById('total-count-display');
@@ -23,7 +18,6 @@ function render() {
     let htmlContent = '';
     let currentTotal = 0;
 
-    // 1. 跑迴圈生成 HTML
     weddingFlavors.forEach((item, index) => {
         currentTotal += item.count;
 
@@ -42,11 +36,10 @@ function render() {
         `;
     });
 
-    // 2. 更新 DOM
     container.innerHTML = htmlContent;
     totalDisplay.innerText = currentTotal;
 
-    // 3. 控制「下一步」按鈕狀態 (有選數量才能按)
+    // 按鈕狀態 有選數量才能按
     if (currentTotal > 0) {
         nextBtn.classList.add('active');
     } else {
@@ -68,7 +61,6 @@ function updateWeddingCount(index, direction) {
 }
 
 
-// --- Part 3: 初始化 ---
 document.addEventListener("DOMContentLoaded", function() {
     
     render(); 

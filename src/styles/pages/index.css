@@ -217,7 +217,6 @@
 .introduce {
     max-width: 600px;
     margin: 0 auto 40px auto;
-    /* 置中，跟下方圖片保持距離 */
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.8);
     /* 半透明白底 */
@@ -227,7 +226,6 @@
     transition: opacity 0.3s ease;
     /* 淡入淡出特效 */
     min-height: 150px;
-    /* 固定高度，避免文字長短造成版面跳動 */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -237,7 +235,6 @@
 .introduce h2 {
     font-size: 24px;
     color: #E8AE37;
-    /* 品牌金 */
     margin-bottom: 12px;
     letter-spacing: 0.1em;
 }
@@ -269,11 +266,9 @@
 /* 被選中的狀態 (由 JS 控制) */
 .flavor-introduce__list figure.active {
     opacity: 1;
-    /* 變清楚 */
     transform: scale(1.15) translateY(-10px);
-    /* 放大並浮起來 */
     filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.15));
-    /* 加陰影 */
+
 }
 
 /* 滑鼠滑過的狀態 */

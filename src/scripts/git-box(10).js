@@ -8,15 +8,10 @@ const flavorData = [
     { id: 'taro', name: '芋泥鹹蛋黃', img: '../../assets/images/index/flavor-taro-salted-egg-yolk.png', count: 0 }
 ];
 const MAX = 10;
-const BOX_UNIT_PRICE = 999; // 禮盒單價
-let currentBoxQty = 1;      // 目前購買盒數 (預設 1 盒)
+const BOX_UNIT_PRICE = 999; 
+let currentBoxQty = 1;     
 
-
-// git-box(10).js
-
-// ... (flavorData 和 MAX 變數保持不變) ...
-
-// 🔥 新增這個函式：專門負責渲染左邊的小購物車
+//購物車
 function renderCart() {
     const listContainer = document.getElementById('selected-list-container');
     const totalCountSpan = document.getElementById('cart-total-count');
@@ -24,10 +19,10 @@ function renderCart() {
     let listHTML = '';
     let totalItems = 0;
 
-    // 1. 過濾出數量 > 0 的口味 (這就是你要的新物件概念)
+
     const selectedItems = flavorData.filter(item => item.count > 0);
 
-    // 2. 跑迴圈生成 HTML
+
     if (selectedItems.length === 0) {
         listHTML = '<p style="color: #999; text-align: center; margin-top: 20px;">尚未選擇口味</p>';
     } else {
@@ -42,43 +37,42 @@ function renderCart() {
         });
     }
 
-    // 3. 更新畫面
+
     listContainer.innerHTML = listHTML;
     
-    // 更新購物車下方顯示的總數
+
     if (totalCountSpan) {
         totalCountSpan.innerText = totalItems;
     }
 }
 
+//顯示數量
 function updateBoxQty(change) {
-    // 1. 計算新數量
+    
     const newQty = currentBoxQty + change;
 
-    // 2. 驗證：不能少於 1 盒，也可以設上限(例如最多買50盒)
+    
     if (newQty >= 1 && newQty <= 50) {
         currentBoxQty = newQty;
         
-        // 3. 更新畫面
+       
         renderPriceInfo();
     }
 }
 
-// 👇👇👇 新增這個函式：用來更新 DOM 上的價格跟數量 👇👇👇
+//計算總價
 function renderPriceInfo() {
     const qtyDisplay = document.getElementById('box-qty-display');
     const priceDisplay = document.getElementById('total-price');
 
-    // 計算總價
+    
     const totalPrice = currentBoxQty * BOX_UNIT_PRICE;
 
-    // 更新 HTML
+    
     if (qtyDisplay) qtyDisplay.innerText = currentBoxQty;
     if (priceDisplay) priceDisplay.innerText = totalPrice.toLocaleString(); 
 }
 
-
-// 修改原本的 render 函式
 function render() {
     const container = document.getElementById('flavor-container');
     const progressFill = document.getElementById('progress-fill');
@@ -90,8 +84,7 @@ function render() {
     for (let i = 0; i < flavorData.length; i++) {
         let item = flavorData[i];
         currentTotal += item.count;
-        
-        // ... (中間生成卡片的 htmlContent 保持不變) ...
+    
         htmlContent += `
         <div class="gift-box__card">
             <img src="${item.img}" alt="${item.name}">
@@ -111,7 +104,7 @@ function render() {
     }
     container.innerHTML = htmlContent;
 
-    // 進度條邏輯保持不變
+    // 進度條
     let percentage = (currentTotal / MAX) * 100;
     if (progressFill) {
         progressFill.style.width = `${percentage}%`;
@@ -121,7 +114,6 @@ function render() {
         progressText.innerText = `${currentTotal} / ${MAX}`;
     }
 
-    // 🔥 關鍵：每次 render 主畫面的時候，順便 render 購物車
     renderCart(); 
 }
 
@@ -150,7 +142,6 @@ function updateCount(products, change) {
         }
     }
 
-    // 資料改完了，叫 render 重畫整個畫面 (包含購物車)
     render();
 }
 

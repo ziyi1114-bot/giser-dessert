@@ -8,7 +8,7 @@ function toggleUpload(show) {
     }
 }
 
-// 監聽檔案選擇，顯示檔名
+
 document.addEventListener('DOMContentLoaded', function() {
     const realInput = document.getElementById('real-file-input');
     const fileNameDisplay = document.getElementById('file-name-display');
@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (realInput) {
         realInput.addEventListener('change', function() {
             if (this.files && this.files[0]) {
-                // 如果有選到檔案，就顯示檔名
                 fileNameDisplay.innerText = this.files[0].name;
                 fileNameDisplay.style.color = "#333";
             } else {

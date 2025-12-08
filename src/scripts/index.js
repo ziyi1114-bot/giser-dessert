@@ -38,7 +38,7 @@ const flavorData = [
     }
 ];
 
-// --- 互動邏輯 ---
+// --- 互動 ---
 function initFlavorInteraction() {
     const figures = document.querySelectorAll('.flavor-introduce__list figure');
     const titleDisplay = document.getElementById('introduce_title');
@@ -49,13 +49,13 @@ function initFlavorInteraction() {
 
     figures.forEach((figure, index) => {
         figure.addEventListener('click', () => {
-            // 1. 移除所有人的 active class
+            
             figures.forEach(f => f.classList.remove('active'));
 
-            // 2. 幫自己加上 active
+            
             figure.classList.add('active');
 
-            // 3. 更新上方文字
+            
             updateFlavorDisplay(index);
         });
     });
@@ -63,7 +63,7 @@ function initFlavorInteraction() {
     function updateFlavorDisplay(index) {
         const data = flavorData[index];
 
-        // 加上淡入淡出的動畫效果 (Reset animation)
+        // 加上淡入淡出 
         const textBox = document.querySelector('.introduce');
         textBox.style.opacity = 0;
 

@@ -120,7 +120,7 @@ body.no-scroll {
         bottom 0.3s ease;
 }
 
-/* 三條線的預設位置：上 / 中 / 下 */
+
 .hamburger-menu span:nth-child(1) {
     top: 0;
 }
