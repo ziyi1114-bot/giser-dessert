@@ -1,45 +1,43 @@
-/* --- 步驟條容器 --- */
+/* --- 步驟條 --- */
 .steps-container {
-    display: flex;               /* 讓三個步驟橫向排列 */
-    justify-content: space-between; /* 平均分散在兩側 */
-    align-items: flex-start;     /* 靠上對齊 */
-    margin-bottom: 40px;         /* 與下方表單拉開距離 */
-    position: relative;          /* 關鍵：為了讓連接線定位 */
+    display: flex;               
+    justify-content: space-between; 
+    align-items: flex-start;     
+    margin-bottom: 40px;         
+    position: relative;          
 }
 
-/* --- 👻 CSS 魔術：用偽元素畫出灰色的背景連接線 --- */
 .steps-container::before {
-    content: '';                 /* 偽元素一定要有 content */
-    position: absolute;          /* 絕對定位 */
-    top: 15px;                   /* 定位在圓圈的中間高度 (圓圈高30px的一半) */
+    content: '';                 
+    position: absolute;          
+    top: 15px;                  
     left: 0;
-    width: 100%;                 /* 拉滿整個寬度 */
-    height: 2px;                 /* 線的粗細 */
-    background-color: #e0e0e0;   /* 淺灰色底線 */
-    z-index: 0;                  /* 放在最底層，讓圓圈壓在上面 */
+    width: 100%;                 
+    height: 2px;                 
+    background-color: #e0e0e0;  
+    z-index: 0;                  
 }
 
-/* --- 每一個步驟區塊 --- */
 .step {
-    position: relative;          /* 為了讓自己的內容壓在線上 */
-    z-index: 1;                  /* 比線高一層 */
-    text-align: center;          /* 文字置中 */
-    width: 33.33%;               /* 三個步驟平分寬度 */
+    position: relative;         
+    z-index: 1;                  
+    text-align: center;         
+    width: 33.33%;               
 }
 
-/* --- 圓圈圈的樣式 (基礎版) --- */
+/* --- 圓圈圈的樣式 --- */
 .step-circle {
     width: 30px;
     height: 30px;
-    background-color: #fff;      /* 預設白底 */
-    border: 2px solid #e0e0e0;   /* 預設灰框 */
-    border-radius: 50%;          /* 變成圓形 */
+    background-color: #fff;      
+    border: 2px solid #e0e0e0;  
+    border-radius: 50%;          
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 10px auto;    /* 置中，並與下方文字留距 */
+    margin: 0 auto 10px auto;    
     font-weight: bold;
-    color: #999;                 /* 預設灰字 */
+    color: #999;                 
     transition: all 0.3s;
 }
 
@@ -50,44 +48,43 @@
     margin: 0;
 }
 
-/* --- 狀態設計：已完成 (Completed) --- */
+/* --- 狀態設計：已完成 --- */
 .step.completed .step-circle {
-    background-color: #FFB6C1;   /* 實心粉紅底 */
-    border-color: #FFB6C1;       /* 粉紅框 */
-    color: white;                /* 白字 */
+    background-color: #FFB6C1;   
+    border-color: #FFB6C1;      
+    color: white;                
 }
 .step.completed .step-label {
-    color: #FFB6C1;              /* 文字也變粉紅 */
+    color: #FFB6C1;              
 }
 
-/* --- 👻 CSS 魔術進階：把已完成的連接線蓋上去 --- */
-/* 這個選擇器意思是：在「已完成」步驟後面的那條線 */
+
 .step.completed::after {
     content: '';
     position: absolute;
     top: 15px;
-    left: 50%;                   /* 從圓圈中間開始 */
-    width: 100%;                 /* 往右拉滿 */
+    left: 50%;                  
+    width: 100%;               
     height: 2px;
-    background-color: #FFB6C1;   /* 粉紅色線 */
-    z-index: -1;                 /* 放在圓圈後面，灰色線前面 */
+    background-color: #FFB6C1;   
+    z-index: -1;                 
 }
-/* 最後一個步驟不需要往後延伸的線，藏起來 */
+
 .step:last-child::after {
     display: none;
 }
 
 
-/* --- 狀態設計：目前進行中 (Active) --- */
+/* --- 目前進行中 --- */
 .step.active .step-circle {
-    background-color: #fff;      /* 白底 */
-    border-color: #FFB6C1;       /* 粉紅框 */
-    color: #FFB6C1;              /* 粉紅字 */
-    transform: scale(1.1);       /* 稍微放大一點點，強調現在在這裡 */
-    box-shadow: 0 0 10px rgba(255, 182, 193, 0.3); /* 加一點發光效果 */
+    background-color: #fff;      
+    border-color: #FFB6C1;      
+    color: #FFB6C1;              
+    transform: scale(1.1);       
+    box-shadow: 0 0 10px rgba(255, 182, 193, 0.3);
 }
 .step.active .step-label {
-    color: #333;                 /* 文字用深黑色強調 */
+    color: #333;                 
     font-weight: bold;
 }
 /* --- 共用標題樣式 --- */
@@ -106,18 +103,17 @@
     font-size: 1.1rem;
     color: #555;
     margin-bottom: 15px;
-    border-left: 4px solid #FFB6C1; /* 左邊加個粉紅條增加設計感 */
+    border-left: 4px solid #FFB6C1; 
     padding-left: 10px;
 }
 
-/* --- 包裝選擇區塊佈局 --- */
+/* --- 包裝選擇區塊 --- */
 .package-selection {
     display: flex;
     justify-content: center;
-    gap: 30px; /* 兩個選項間的距離 */
+    gap: 30px; 
 }
 
-/* --- 關鍵技術：隱藏 Radio Button --- */
 .hidden-radio {
     position: absolute;
     opacity: 0; /* 讓它看不見，但還是存在於那裡 */
@@ -132,7 +128,7 @@
     border: 2px solid #eee; /* 預設灰框 */
     border-radius: 12px;
     padding: 15px;
-    cursor: pointer; /* 滑鼠變手指 */
+    cursor: pointer; 
     transition: all 0.3s ease;
     text-align: center;
     max-width: 250px;
@@ -151,12 +147,11 @@
     font-weight: bold;
 }
 
-/* --- 🔥 重點：當 Radio 被選中時，改變後面 Label 的樣式 --- */
-/* 這行意思是：當 .hidden-radio 被 checked 之後，緊接著它的 .package-card 樣式要改變 */
+
 .hidden-radio:checked + .package-card {
-    border-color: #FFB6C1; /* 變成粉紅框 */
-    box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4); /* 加上粉紅發光陰影 */
-    transform: translateY(-5px); /* 稍微浮起來 */
+    border-color: #FFB6C1; 
+    box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4); 
+    transform: translateY(-5px); 
 }
 
 /* --- 小卡選擇區塊 --- */
@@ -169,7 +164,7 @@
 }
 .radio-label input {
     margin-right: 8px;
-    accent-color: #FFB6C1; /* 設定原生 Radio 的顏色為粉紅色 (新型瀏覽器支援) */
+    accent-color: #FFB6C1; 
 }
 
 /* --- 上傳檔案區塊 --- */
@@ -219,5 +214,5 @@
 }
 
 .btn-submit:active {
-    transform: scale(0.98); /* 點下去縮小一點點的回饋感 */
+    transform: scale(0.98); 
 }

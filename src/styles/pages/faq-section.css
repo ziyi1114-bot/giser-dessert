@@ -98,13 +98,11 @@
 
 .accordion-item.active .accordion-panel {
     display: block;
-    /* 顯示出來 */
     border-top-color: #ddd;
     /* 顯示分隔線 */
 
 }
 
-/* (選配) 讓標題在展開時變色，增加視覺回饋 */
 .accordion-item.active .accordion-header {
     background-color: #FFB6C1;
     /* 變成粉紅色 */

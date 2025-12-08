@@ -144,7 +144,7 @@
 
 /* gift-box__products.css */
 
-/* 清單容器：設定高度，如果太多口味可以捲動 */
+
 .selected-list {
     width: 100%;
     margin-top: 15px;
@@ -170,7 +170,7 @@
     color: #555;
 }
 
-/* 覆寫原本的 cart-flavor 讓它版面彈性一點 */
+
 .cart-flavor {
     border-bottom: 1px solid black;
     height: auto; /* 原本是固定高度，改成 auto 隨內容長高 */
@@ -183,7 +183,7 @@
 
 /* gift-box__products.css */
 
-/* 新增的結算區塊容器 */
+
 .cart-summary {
     width: 80%;
     margin: 10px 0;

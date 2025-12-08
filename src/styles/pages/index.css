@@ -248,22 +248,18 @@
 /* 圖片列表美化 */
 .flavor-introduce__list figure {
     cursor: pointer;
-    /* 讓滑鼠變手指 */
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    /* 彈跳效果 */
     opacity: 0.6;
-    /* 沒選中的比較淡 */
     transform: scale(0.9);
 }
 
 .flavor-introduce__list figure img {
     width: 80px;
-    /* 設定圖片大小統一 */
     height: auto;
     display: block;
 }
 
-/* 被選中的狀態 (由 JS 控制) */
+/* 被選中的狀態*/
 .flavor-introduce__list figure.active {
     opacity: 1;
     transform: scale(1.15) translateY(-10px);
@@ -271,7 +267,6 @@
 
 }
 
-/* 滑鼠滑過的狀態 */
 .flavor-introduce__list figure:hover {
     opacity: 0.9;
     transform: scale(1.05);
@@ -294,7 +289,7 @@
 }
 @media screen and (min-width: 769px) {
     .hero {
-        margin-top: -150px;   /* 負值大約等於 header 的高度 */
-        padding-top: 150px;   /* 補回被 header 蓋住的空間 */
+        margin-top: -150px;  
+        padding-top: 150px;   
     }
 }

@@ -30,7 +30,7 @@
     padding: 0 10px;
 }
 
-/* 桌機才需要往上吃 header 的高度 */
+
 @media screen and (min-width: 769px) {
     .banner {
         margin-top: -150px;
@@ -42,7 +42,7 @@
 
     .banner {
         min-height: 180px;
-        padding: 80px 0 24px;  /* 視覺上留一點上方空間給 header */
+        padding: 80px 0 24px;  
     }
 
     .banner-container {

@@ -218,7 +218,6 @@
         font-size: 0.9rem;
     }
 
-    /* 商品列表：三欄改兩欄，高度自動，左右不要有大 margin */
     .product-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-auto-rows: auto;
@@ -229,7 +228,6 @@
         justify-items: center;
     }
 
-    /* 單一卡片縮小、取消大 margin，避免被擠爆 */
     .product-card {
         max-width: 160px;
         max-height: none;
@@ -248,7 +246,6 @@
         text-align: center;
     }
 
-    /* 加減控制條間距縮小 */
     .control-bar {
         gap: 10px;
         margin-top: 10px;
