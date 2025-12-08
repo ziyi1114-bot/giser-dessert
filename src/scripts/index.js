@@ -1,4 +1,4 @@
-// --- Flavor Data (口味資料庫) ---
+
 const flavorData = [
     {
         id: 'chocolate',
@@ -38,24 +38,18 @@ const flavorData = [
     }
 ];
 
-// --- 互動 ---
 function initFlavorInteraction() {
     const figures = document.querySelectorAll('.flavor-introduce__list figure');
     const titleDisplay = document.getElementById('introduce_title');
     const contentDisplay = document.getElementById('introduce_content');
 
-    // 預設顯示第一個口味
     updateFlavorDisplay(0);
 
     figures.forEach((figure, index) => {
         figure.addEventListener('click', () => {
             
             figures.forEach(f => f.classList.remove('active'));
-
-            
             figure.classList.add('active');
-
-            
             updateFlavorDisplay(index);
         });
     });
@@ -63,7 +57,6 @@ function initFlavorInteraction() {
     function updateFlavorDisplay(index) {
         const data = flavorData[index];
 
-        // 加上淡入淡出 
         const textBox = document.querySelector('.introduce');
         textBox.style.opacity = 0;
 
@@ -77,12 +70,12 @@ function initFlavorInteraction() {
 
 
 var mySwiper = new Swiper(".mySwiper", {
-    // 1. 基礎設定
-    loop: true,              // 無限循環
-    slidesPerView: 1,        // 一次一張
-    spaceBetween: 0,         // 沒間距
+    //  基礎設定
+    loop: true,              
+    slidesPerView: 1,        
+    spaceBetween: 0,        
 
-    // 3. 導航
+    //  導航
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -92,5 +85,4 @@ var mySwiper = new Swiper(".mySwiper", {
         prevEl: ".swiper-button-prev",
     },
 });
-// 啟動
 document.addEventListener('DOMContentLoaded', initFlavorInteraction);
